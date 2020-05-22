@@ -1,6 +1,6 @@
 import * as THREE from 'three/build/three.module';
 
-class AboutPage {
+class OpleidingPage {
   constructor () {
     this.initThree();
   }
@@ -55,4 +55,4 @@ class AboutPage {
   }
 }
 
-export default AboutPage;
+export default OpleidingPage;

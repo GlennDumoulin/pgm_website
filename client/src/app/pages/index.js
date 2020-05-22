@@ -1,15 +1,25 @@
-import AboutPage from './AboutPage';
-import CasesPage from './CasesPage';
 import HomePage from './HomePage';
+import OpleidingPage from './OpleidingPage';
+import PGMTeamPage from './PGMTeamPage';
+import StudentDetailPage from './StudentDetailPage';
+import PortfolioPage from './PortfolioPage';
+import CaseDetailPage from './CaseDetailPage';
+import NieuwsPage from './NieuwsPage';
+import NieuwsDetailPage from './NieuwsDetailPage';
+import WerkpleklerenPage from './WerkpleklerenPage';
+import ContactPage from './ContactPage';
 import NotFoundPage from './NotFoundPage';
-import PostDetailPage from './PostDetailPage';
-import TeamPage from './TeamPage';
 
 export {
-  AboutPage,
-  CasesPage,
   HomePage,
+  OpleidingPage,
+  PGMTeamPage,
+  StudentDetailPage,
+  PortfolioPage,
+  CaseDetailPage,
+  NieuwsPage,
+  NieuwsDetailPage,
+  WerkpleklerenPage,
+  ContactPage,
   NotFoundPage,
-  PostDetailPage,
-  TeamPage,
 };

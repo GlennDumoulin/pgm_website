@@ -10,7 +10,7 @@
 
 // Custom settings
 $grid-columns:      12;
-$grid-gutter-width: 64px;
+$grid-gutter-width: 32px;
 
 // Needed
 @import "~bootstrap/scss/mixins";
@@ -22,4 +22,9 @@ $grid-gutter-width: 64px;
 
 // My Own Styling
 @import "./abstracts/index";
-@import "./core/index";
+@import "./base/index";
+@import "./components/index";
+@import "./layout/index";
+@import "./pages/index";
+@import "./themes/index";
+@import "./vendors/index";

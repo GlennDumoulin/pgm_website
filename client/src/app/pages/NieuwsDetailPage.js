@@ -1,6 +1,6 @@
 import { BAAS } from '../services';
 
-class PostDetailPage {
+class NieuwsDetailPage {
   async getPost (id) {
     const post = await BAAS.getPost(id);
     return `
@@ -35,4 +35,4 @@ class PostDetailPage {
   }
 }
 
-export default PostDetailPage;
+export default NieuwsDetailPage;

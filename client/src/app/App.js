@@ -1,6 +1,7 @@
 import { Router, routes } from './router';
 import {
-  HomePage, AboutPage, NotFoundPage, PostDetailPage, CasesPage, TeamPage,
+  HomePage, OpleidingPage, PGMTeamPage, StudentDetailPage, PortfolioPage, CaseDetailPage,
+  NieuwsPage, NieuwsDetailPage, WerkpleklerenPage, ContactPage, NotFoundPage,
 } from './pages';
 import { Header } from './components';
 
@@ -11,11 +12,16 @@ class App {
 
     // Pages
     this.pageHome = new HomePage();
-    this.pageAbout = new AboutPage();
+    this.pagepageOpleiding = new OpleidingPage();
+    this.pagePGMTeam = new PGMTeamPage();
+    this.pageStudentDetail = new StudentDetailPage();
+    this.pagePortfolio = new PortfolioPage();
+    this.pageCaseDetail = new CaseDetailPage();
+    this.pageNieuws = new NieuwsPage();
+    this.pageNieuwsDetail = new NieuwsDetailPage();
+    this.pageWerkplekleren = new WerkpleklerenPage();
+    this.pageContact = new ContactPage();
     this.pageNotFound = new NotFoundPage();
-    this.pagePostDetail = new PostDetailPage();
-    this.pageCases = new CasesPage();
-    this.pageTeam = new TeamPage();
 
     // Components
     this.compHeader = new Header();
@@ -38,11 +44,16 @@ class App {
     this.router = new Router(this.childrenContainer);
     this.router.addRoute(routes.LANDING, this.pageHome);
     this.router.addRoute(routes.HOME, this.pageHome);
-    this.router.addRoute(routes.ABOUT, this.pageAbout);
-    this.router.addRoute(routes.POST_DETAIL, this.pagePostDetail);
-    this.router.addRoute(routes.CASES, this.pageCases);
-    this.router.addRoute(routes.TEAM, this.pageTeam);
-    this.router.setNotFoundPage(this.pageNotFound);   
+    this.router.addRoute(routes.OPLEIDING, this.pageOpleiding);
+    this.router.addRoute(routes.PGMTEAM, this.pagePGMTeam);
+    this.router.addRoute(routes.STUDENT_DETAIL, this.pageStudentDetail);
+    this.router.addRoute(routes.PORTFOLIO, this.pagePortfolio);
+    this.router.addRoute(routes.CASE_DETAIL, this.pageCaseDetail);
+    this.router.addRoute(routes.NIEUWS, this.pageNieuws);
+    this.router.addRoute(routes.NIEUWS_DETAIL, this.pageNieuwsDetail);
+    this.router.addRoute(routes.WERKPLEKLEREN, this.pageWerkplekleren);
+    this.router.addRoute(routes.CONTACT, this.pageContact);
+    this.router.setNotFoundPage(this.pageNotFound);
   }
 }
 

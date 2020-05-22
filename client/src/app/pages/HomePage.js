@@ -11,7 +11,7 @@ class HomePage {
           <img src="${post.thumbnailUrl}" />
         </picture>
         <h1 class="post__title">${post.title}</h1>
-        <a href="#!${routes.POST_DETAIL.replace(':id', post.id)}">Details</a>
+        <a href="#!${routes.NIEUWS_DETAIL.replace(':id', post.id)}">Details</a>
       </div>`).join('');
   }
 
