@@ -1,0 +1,25 @@
+/*
+ * Bootstrap
+ *
+*/
+
+// Needed
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+
+
+// Custom settings
+$grid-columns:      12;
+$grid-gutter-width: 64px;
+
+// Needed
+@import "~bootstrap/scss/mixins";
+
+// Optional
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/utilities/display";
+@import "~bootstrap/scss/utilities/flex";
+
+// My Own Styling
+@import "./abstracts/index";
+@import "./core/index";
