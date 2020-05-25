@@ -2,7 +2,7 @@ class PGMTeamPage {
   async render () {
     return `
       <div class="page page--team">
-        TEAM
+        <h1>PGM-Team</h1>
       </div>
     `;
   }

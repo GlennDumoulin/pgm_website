@@ -3,7 +3,7 @@ import {
   HomePage, OpleidingPage, PGMTeamPage, StudentDetailPage, PortfolioPage, CaseDetailPage,
   NieuwsPage, NieuwsDetailPage, WerkpleklerenPage, ContactPage, NotFoundPage,
 } from './pages';
-import { Header } from './components';
+import { Header, Footer } from './components';
 
 class App {
   constructor (container) {
@@ -12,7 +12,7 @@ class App {
 
     // Pages
     this.pageHome = new HomePage();
-    this.pagepageOpleiding = new OpleidingPage();
+    this.pageOpleiding = new OpleidingPage();
     this.pagePGMTeam = new PGMTeamPage();
     this.pageStudentDetail = new StudentDetailPage();
     this.pagePortfolio = new PortfolioPage();
@@ -25,6 +25,7 @@ class App {
 
     // Components
     this.compHeader = new Header();
+    this.compFooter = new Footer();
   }
 
   async render () {
@@ -32,14 +33,14 @@ class App {
     ${await this.compHeader.render()}
     <main class="main">
       <div id="children"></div>
-    </div>    
+    </div> 
+    ${await this.compFooter.render()}   
     `;
   }
 
   async afterRender () {
-    await this.compHeader.afterRender();
-
     this.childrenContainer = document.getElementById('children');
+
     // Router
     this.router = new Router(this.childrenContainer);
     this.router.addRoute(routes.LANDING, this.pageHome);
@@ -54,6 +55,24 @@ class App {
     this.router.addRoute(routes.WERKPLEKLEREN, this.pageWerkplekleren);
     this.router.addRoute(routes.CONTACT, this.pageContact);
     this.router.setNotFoundPage(this.pageNotFound);
+    this.router.resolve();
+
+    // Register components afterRender methods
+    await this.compHeader.afterRender();
+    await this.compFooter.afterRender();
+
+    // Listen to changes in history
+    window.onpopstate = (event) => {
+      this.setActiveLink();
+    };
+
+    // Set active link
+    this.setActiveLink();
+  }
+
+  setActiveLink () {
+    this.compHeader.updateActiveLink(document.location.hash);
+    this.compFooter.updateActiveLink(document.location.hash);
   }
 }
 

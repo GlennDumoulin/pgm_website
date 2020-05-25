@@ -2,6 +2,7 @@ import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import CopyPlugin from 'copy-webpack-plugin';
 import ProgressBarPlugin from 'progress-bar-webpack-plugin';
 import chalk from 'chalk';
 
@@ -117,6 +118,14 @@ const config = {
     new ProgressBarPlugin({
       format: `  build [:bar] ${chalk.green.bold(':percent')} (:elapsed seconds)`,
       clear: false,
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src', 'robots.txt'),
+          to: 'robots.txt',
+        }
+      ]
     }),
   ],
 }

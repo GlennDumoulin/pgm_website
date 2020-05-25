@@ -22,8 +22,7 @@ class Router {
           await page.unmount();
         },
       }
-    )
-      .resolve();
+    );
   }
 
   setNotFoundPage (page) {
@@ -32,6 +31,10 @@ class Router {
         this.container.innerHTML = await page.render();
       }
     );
+  }
+
+  resolve () {
+    this.router.resolve();
   }
 }
 

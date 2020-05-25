@@ -1,20 +1,8 @@
-import { BAAS } from '../services';
-
 class NieuwsDetailPage {
-  async getPost (id) {
-    const post = await BAAS.getPost(id);
+  async render () {
     return `
-      <div class="post">
-        <h1>${post.title}</h1>
-        <div>${post.synopsis}</div>
-      </div>
-    `;
-  }
-
-  async render (params) {
-    return `
-      <div class="page page--home">
-        ${await this.getPost(params.id)}
+      <div class="page page--nieuws_detail">
+        <h1>Nieuws detail</h1>
       </div>
     `;
   }
