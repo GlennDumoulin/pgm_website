@@ -13,6 +13,18 @@ class Footer {
     // Connect the listeners
     return this;
   }
+
+  updateActiveLink (route) {
+    const prevActiveMenuItemElement = document.querySelector(`.footer-section__item > a[class*="active"]`);
+    if (prevActiveMenuItemElement) {
+      prevActiveMenuItemElement.classList.remove('active');
+    }
+    const link = route.replace('#!', '');
+    const menuItemElement = document.querySelector(`.footer-section__item > a[href*="${link}"]`);
+    if (menuItemElement) {
+      menuItemElement.classList.add('active');
+    }
+  }
 }
 
 export default Footer;

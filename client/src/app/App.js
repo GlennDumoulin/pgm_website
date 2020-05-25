@@ -33,7 +33,7 @@ class App {
     ${await this.compHeader.render()}
     <main class="main">
       <div id="children"></div>
-    </div> 
+    </main>
     ${await this.compFooter.render()}   
     `;
   }

@@ -1,14 +1,17 @@
 import { routes } from '../router';
 
+import pgmLogo from '../_static/images/pgm_logo.png';
+
 class Header {
   async render () {
     return `
       <header class="header">
-        <div class="btn-hamburger">HAMB</div>
         <div class="container nav">
           <div class="row">
             <div class="nav_logo">
-              <a href="${routes.HOME}" data-navigo>Home</a>
+              <a href="${routes.HOME}" data-navigo>
+                <img src="${pgmLogo}" alt="Logo PGM">
+              </a>
             </div>
             <div class="nav_pages">
               <a href="${routes.OPLEIDING}" class="nav_pages--item" data-navigo>Opleiding</a>
@@ -18,6 +21,7 @@ class Header {
               <a href="${routes.WERKPLEKLEREN}" class="nav_pages--item" data-navigo>Werkplekleren</a>
               <a href="${routes.CONTACT}" class="nav_pages--item" data-navigo>Contact</a>
             </div>
+            <div class="btn-hamburger">HAMB</div>
           </div>
         </div>        
       </header>
@@ -31,6 +35,18 @@ class Header {
       console.log(ev);
     });
     return this;
+  }
+
+  updateActiveLink (route) {
+    const prevActiveMenuItemElement = document.querySelector(`.nav__item > a[class*="active"]`);
+    if (prevActiveMenuItemElement) {
+      prevActiveMenuItemElement.classList.remove('active');
+    }
+    const link = route.replace('#!', '');
+    const menuItemElement = document.querySelector(`.nav__item > a[href*="${link}"]`);
+    if (menuItemElement) {
+      menuItemElement.classList.add('active');
+    }
   }
 }
 
