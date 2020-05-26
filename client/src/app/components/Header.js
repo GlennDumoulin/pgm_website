@@ -12,7 +12,8 @@ class Header {
               <img src="${pgmLogo}" alt="Logo PGM">
             </a>
           </div>
-          <ul class="nav_list d-flex justify-content-between">
+          <div class="nav_btn btn-hamburger">HAMB</div>
+          <ul class="nav_list justify-content-between">
             <li class="nav_item"><a href="${routes.OPLEIDING}" data-navigo>Opleiding</a></li>
             <li class="nav_item"><a href="${routes.PGMTEAM}" data-navigo>PGM-Team</a></li>
             <li class="nav_item"><a href="${routes.PORTFOLIO}" data-navigo>Portfolio</a></li>
@@ -20,7 +21,6 @@ class Header {
             <li class="nav_item"><a href="${routes.WERKPLEKLEREN}" data-navigo>Werkplekleren</a></li>
             <li class="nav_item"><a href="${routes.CONTACT}" data-navigo>Contact</a></li>
           </ul>
-          <div class="nav_btn btn-hamburger">HAMB</div>
         </nav>
       </header>
       <div class="stroke"></div>
