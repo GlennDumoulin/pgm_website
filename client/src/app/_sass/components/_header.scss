@@ -1,3 +1,38 @@
 .header {
-    background: rgba($color-purple_bg--70, .7);
+    background: $color-purple_bg--70;
+    padding: 20px 75px;
+    & .nav {
+        width: 100%;
+        &_logo {
+            width: 25%;
+        }
+        &_list {
+            list-style: none;
+            width: 70%;
+            box-sizing: border-box;
+        }
+        &_item {
+            font-size: 20px;
+            text-transform: uppercase;
+            & a {
+                color: $color-grey-m;
+                text-decoration: none;
+                transition: all 0.3s ease-in-out;
+                &:hover {
+                    color: $color-whitish-m;
+                }
+                &.active {
+                    color: $color-turqouise-m;
+                }
+            }
+        }
+        &_btn {
+            display: none;
+        }
+    }
+}
+.stroke {
+    width: 100%;
+    height: 3px;
+    background-color: $color-turqouise-m;
 }

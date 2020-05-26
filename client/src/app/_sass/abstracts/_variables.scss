@@ -1,3 +1,21 @@
 // color variables
-$color-white: #fff;
-$color-purple_bg--70: #220857;
+// main colors
+$color-whitish_m: #D3DEE8;
+$color-grey_m: #A3ADB7;
+$color-blackish_m: #303030;
+$color-turqouise_m: #09D3B4;
+$color-dark-turqouise_m: #007F65;
+$color-green_m: #00C95A;
+
+// background colors
+$color-black_bg--50: rgba(#000, .5);
+$color-purple_bg--100: rgba(#220857, 1);
+$color-purple_bg--70: rgba(#220857, .7);
+
+// font variables
+$font-family_stardos-stencil: 'Stardos Stencil', cursive;
+$font-family_roboto: 'Roboto', sans-serif;
+
+// Bootstrap variables
+$grid-columns: 12;
+$grid-gutter-width: 32px;
