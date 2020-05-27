@@ -9,7 +9,7 @@ class Header {
         <nav class="nav row align-items-center justify-content-between">
           <div class="nav_logo">
             <a href="${routes.HOME}" data-navigo>
-              <img src="${pgmLogo}" alt="Logo PGM">
+              <img src="${pgmLogo}" alt="Logo Graduaat Programmeren">
             </a>
           </div>
           <div class="nav_btn btn-hamburger">HAMB</div>

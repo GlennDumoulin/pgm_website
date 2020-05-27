@@ -1,3 +1,14 @@
+html {
+    font-family: $font-family_roboto;
+    font-size: 20px;
+    color: $color-turqouise-m;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    @media (max-width: 768px) {
+        font-size: 16px;
+    }
+}
+
 body {
     background-image: linear-gradient(to right bottom, #422084, #4d2292, #5924a0, #6626ae, #7327bc, #6247d5, #4760eb, #0076ff, #0097ff, #00abe4, #00b8af, #1fbf7c);
     background-attachment: fixed;
@@ -7,28 +18,54 @@ body {
     padding: 0;
 }
 
-html {
-    font-family: $font-family_roboto;
-    font-size: 24px;
-}
-
 h1, h2, h3, h4 {
     font-family: $font-family_stardos-stencil;
+    text-shadow: $color-dark-turqouise-m 4px -3px;
+    @media (max-width: 768px) {
+        text-shadow: $color-dark-turqouise-m 3px -2px;
+    }
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 28px;
+    text-transform: uppercase;
+    @media (max-width: 768px) {
+        font-size: 20px;
+    }
 }
 
 h2 {
-    font-size: 36px;
+    font-size: 24px;
+    @media (max-width: 768px) {
+        font-size: 18px;
+    }
 }
 
 h3 {
-    font-size: 32px;
+    font-size: 20px;
+    @media (max-width: 768px) {
+        font-size: 16px;
+    }
 }
 
 img {
     width: 100%;
     height: auto;
+}
+
+a {
+    color: $color-turqouise-m;
+}
+
+i {
+    color: $color-grey_m;
+    border: 3px solid $color-grey_m;
+    border-radius: 50px;
+    padding: 15px;
+}
+
+.stroke {
+    width: 100%;
+    height: 3px;
+    background-color: $color-turqouise-m;
 }

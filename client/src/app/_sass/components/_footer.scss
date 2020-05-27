@@ -1,0 +1,77 @@
+.footer {
+    width: 100%;
+    &-content {
+        color: $color-grey_m;
+        background-color: $color-purple_bg--70;
+        padding: 25px 0;
+        & h1 {
+            color: $color-turqouise_m;
+        }
+    }
+    &-legal {
+        background-color: $color-purple_bg--100;
+        padding: 5px 0;
+        & p {
+            @media (max-width: 768px) {
+                width: 80%;
+            }
+        }
+    }
+    &-sitemap {
+        &_item {
+            padding-bottom: 5px;
+            & a {
+                color: $color-grey_m;
+                text-decoration: none;
+                transition: all 0.3s ease-in-out;
+                &:hover {
+                    color: $color-whitish_m;
+                }
+                &.active {
+                    color: $color-turqouise_m;
+                }
+            }
+        }
+    }
+    &-contact {
+        &-social {
+            &_list {
+                list-style: none;
+            }
+            &_item {
+                padding-right: 20px;
+                & i {
+                    transition: all 0.3s ease-in-out;
+                }
+                &:hover i {
+                    color: $color-whitish_m;
+                    border-color: $color-whitish_m;
+                }
+            }
+        }
+        &-contact {
+            &_list {
+                list-style: none;
+            }
+            &_item {
+                padding-bottom: 10px;
+                & i,a {
+                    transition: all 0.3s ease-in-out;
+                }
+                &:hover {
+                    & i,a {
+                        color: $color-whitish_m;
+                        border-color: $color-whitish_m;
+                    }
+                }
+                & a {
+                    color: $color-grey_m;
+                    text-decoration: none;
+                    & i {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
