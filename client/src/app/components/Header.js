@@ -12,7 +12,7 @@ class Header {
               <img src="${pgmLogo}" alt="Logo Graduaat Programmeren">
             </a>
           </div>
-          <div class="nav_btn btn-hamburger">HAMB</div>
+          <div class="nav_btn btn-hamburger"><i class="fas fa-bars"></i></div>
           <ul class="nav_list justify-content-between">
             <li class="nav_item"><a href="${routes.OPLEIDING}" data-navigo>Opleiding</a></li>
             <li class="nav_item"><a href="${routes.PGMTEAM}" data-navigo>PGM-Team</a></li>

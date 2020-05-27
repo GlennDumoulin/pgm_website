@@ -44,6 +44,15 @@
         }
         &_btn {
             display: none;
+            & i {
+                transition: all 0.3s ease-in-out;
+            }
+            &:hover {
+                & i {
+                    color: $color-whitish_m;
+                    border-color: $color-whitish_m;
+                }
+            }
             @media (max-width: 768px) {
                 display: block;
                 width: 50px;
