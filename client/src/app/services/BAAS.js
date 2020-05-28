@@ -1,5 +1,4 @@
-const DOMAIN = 'https://pgmgent-1920-students.github.io/atwork2-case1-baas';
-// const MY_DOMAIN = 'https://pgmgent-1920-students.github.io/case1-pgm-website-baas-glendumo';
+const DOMAIN = 'https://pgmgent-1920-students.github.io/case1-pgm-website-baas-glendumo';
 
 class BAAS {
   static getPosts = async () => {
