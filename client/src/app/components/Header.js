@@ -21,6 +21,14 @@ class Header {
             <li class="nav_item"><a href="${routes.WERKPLEKLEREN}" data-navigo>Werkplekleren</a></li>
             <li class="nav_item"><a href="${routes.CONTACT}" data-navigo>Contact</a></li>
           </ul>
+          <ul class="nav_hamb">
+            <li class="nav_item"><a href="${routes.OPLEIDING}" data-navigo>Opleiding</a></li>
+            <li class="nav_item"><a href="${routes.PGMTEAM}" data-navigo>PGM-Team</a></li>
+            <li class="nav_item"><a href="${routes.PORTFOLIO}" data-navigo>Portfolio</a></li>
+            <li class="nav_item"><a href="${routes.NIEUWS}" data-navigo>Nieuws</a></li>
+            <li class="nav_item"><a href="${routes.WERKPLEKLEREN}" data-navigo>Werkplekleren</a></li>
+            <li class="nav_item"><a href="${routes.CONTACT}" data-navigo>Contact</a></li>
+          </ul>
         </nav>
       </header>
       <div class="stroke"></div>
@@ -32,17 +40,35 @@ class Header {
     const btnHamburger = document.querySelector('.btn-hamburger');
     btnHamburger.addEventListener('click', (ev) => {
       console.log(ev);
+      const hambNav = document.querySelector('.nav_hamb');
+      if (hambNav.style.display === 'block') {
+        hambNav.style.display = 'none';
+      } else {
+        hambNav.style.display = 'block';
+      }
     });
     return this;
   }
 
   updateActiveLink (route) {
-    const prevActiveMenuItemElement = document.querySelector(`.nav_item > a[class*="active"]`);
+    const prevActiveMenuItemElement = document.querySelector(`.nav_list > .nav_item > a[class*="active"]`);
     if (prevActiveMenuItemElement) {
       prevActiveMenuItemElement.classList.remove('active', 'underline');
     }
     const link = route.replace('#!', '');
-    const menuItemElement = document.querySelector(`.nav_item > a[href*="${link}"]`);
+    const menuItemElement = document.querySelector(`.nav_list > .nav_item > a[href*="${link}"]`);
+    if (menuItemElement) {
+      menuItemElement.classList.add('active', 'underline');
+    }
+  }
+
+  updateMobileActiveLink (route) {
+    const prevActiveMenuItemElement = document.querySelector(`.nav_hamb > .nav_item > a[class*="active"]`);
+    if (prevActiveMenuItemElement) {
+      prevActiveMenuItemElement.classList.remove('active', 'underline');
+    }
+    const link = route.replace('#!', '');
+    const menuItemElement = document.querySelector(`.nav_hamb > .nav_item > a[href*="${link}"]`);
     if (menuItemElement) {
       menuItemElement.classList.add('active', 'underline');
     }

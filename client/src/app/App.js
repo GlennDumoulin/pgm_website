@@ -72,6 +72,7 @@ class App {
 
   setActiveLink () {
     this.compHeader.updateActiveLink(document.location.hash);
+    this.compHeader.updateMobileActiveLink(document.location.hash);
     this.compFooter.updateActiveLink(document.location.hash);
   }
 }

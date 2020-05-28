@@ -21,11 +21,28 @@
                 display: none;
             }
         }
+        &_hamb {
+            display: none;
+            border-top: 1.5px solid $color-turqouise_m;
+            width: 100%;
+            margin-top: 20px;
+            padding-top: 10px;
+            @media (min-width: 769px) {
+                display: none !important;
+            }
+        }
         &_item {
             font-size: calc(8vw / 6);
             text-transform: uppercase;
             @media (max-width: 992px) {
                 font-size: calc(9vw / 6);
+            }
+            @media (max-width: 768px) {
+                font-size: calc(15vw / 6);
+                padding: 10px 0;
+            }
+            @media (max-width: 576px) {
+                font-size: calc(20vw / 6);
             }
             & a {
                 color: $color-grey_m;
