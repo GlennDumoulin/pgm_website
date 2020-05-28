@@ -13,10 +13,7 @@
             }
         }
         &_list {
-            list-style: none;
             width: 70%;
-            display: flex;
-            box-sizing: border-box;
             @media (max-width: 992px) {
                 width: 75%;
             }
@@ -32,7 +29,6 @@
             }
             & a {
                 color: $color-grey_m;
-                text-decoration: none;
                 transition: all 0.3s ease-in-out;
                 &:hover {
                     color: $color-whitish_m;
@@ -48,6 +44,7 @@
                 transition: all 0.3s ease-in-out;
             }
             &:hover {
+                cursor: pointer;
                 & i {
                     color: $color-whitish_m;
                     border-color: $color-whitish_m;

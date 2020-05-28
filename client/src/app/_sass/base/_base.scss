@@ -1,9 +1,12 @@
+* {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
 html {
     font-family: $font-family_roboto;
     font-size: 20px;
     color: $color-turqouise-m;
-    margin-block-start: 0;
-    margin-block-end: 0;
     @media (max-width: 768px) {
         font-size: 16px;
     }
@@ -16,11 +19,13 @@ body {
     background-size: contain;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
     font-family: $font-family_stardos-stencil;
     text-shadow: $color-dark-turqouise-m 4px -3px;
+    margin: 25px 0 10px;
     @media (max-width: 768px) {
         text-shadow: $color-dark-turqouise-m 3px -2px;
     }
@@ -48,6 +53,22 @@ h3 {
     }
 }
 
+p {
+    margin-bottom: 10px;
+}
+
+ul {
+    padding-inline-start: 0;
+    list-style: none;
+    &.row {
+        padding-inline-start: 20px;
+    }
+    &.list-style {
+        list-style: disc;
+        padding-inline-start: 20px;
+    }
+}
+
 img {
     width: 100%;
     height: auto;
@@ -55,6 +76,10 @@ img {
 
 a {
     color: $color-turqouise-m;
+    text-decoration: none;
+    &.underline {
+        text-decoration: underline;
+    }
 }
 
 i {
@@ -62,10 +87,14 @@ i {
     border: 3px solid $color-grey_m;
     border-radius: 50px;
     padding: 15px;
+    &.no-borders {
+        border: none;
+    }
 }
 
 .stroke {
     width: 100%;
     height: 3px;
+    margin: 0;
     background-color: $color-turqouise-m;
 }
