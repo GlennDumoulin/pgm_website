@@ -1,28 +1,64 @@
 const DOMAIN = 'https://pgmgent-1920-students.github.io/case1-pgm-website-baas-glendumo';
 
 class BAAS {
-  static getPosts = async () => {
-    const response = await fetch(`${DOMAIN}/data/blog/index.json`);
+  static getOpleiding = async () => {
+    const response = await fetch(`${DOMAIN}/data/opleiding/index.json`);
     const jsonData = await response.json();
     return jsonData;
   }
 
-  static getPost = async (id) => {
-    const response = await fetch(`${DOMAIN}/data/blog/index.json`);
+  static getTeam = async () => {
+    const response = await fetch(`${DOMAIN}/data/team/index.json`);
     const jsonData = await response.json();
-    return jsonData.find(post => post.id === id);
+    return jsonData;
+  }
+
+  static getTeamMember = async (id) => {
+    const response = await fetch(`${DOMAIN}/data/team/index.json`);
+    const jsonData = await response.json();
+    return jsonData.find(member => member.id === id);
+  }
+
+  static getStudents = async () => {
+    const response = await fetch(`${DOMAIN}/data/students/index.json`);
+    const jsonData = await response.json();
+    return jsonData;
+  }
+
+  static getStudent = async (id) => {
+    const response = await fetch(`${DOMAIN}/data/students/index.json`);
+    const jsonData = await response.json();
+    return jsonData.find(student => student.id === id);
   }
 
   static getCases = async () => {
-    const response = await fetch(`${DOMAIN}/data/cases/index.json`);
+    const response = await fetch(`${DOMAIN}/data/portfolio/index.json`);
     const jsonData = await response.json();
     return jsonData;
   }
 
   static getCase = async (id) => {
-    const response = await fetch(`${DOMAIN}/data/cases/index.json`);
+    const response = await fetch(`${DOMAIN}/data/portfolio/index.json`);
     const jsonData = await response.json();
-    return jsonData.find(project => project.Id === id);
+    return jsonData.find(project => project.id === id);
+  }
+
+  static getPosts = async () => {
+    const response = await fetch(`${DOMAIN}/data/nieuws/index.json`);
+    const jsonData = await response.json();
+    return jsonData;
+  }
+
+  static getPost = async (id) => {
+    const response = await fetch(`${DOMAIN}/data/nieuws/index.json`);
+    const jsonData = await response.json();
+    return jsonData.find(post => post.id === id);
+  }
+
+  static getContacts = async () => {
+    const response = await fetch(`${DOMAIN}/data/contacts/index.json`);
+    const jsonData = await response.json();
+    return jsonData;
   }
 }
 
