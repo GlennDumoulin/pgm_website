@@ -1,7 +1,7 @@
 class HomePage {
   async render () {
     return `
-      <div class="page page--home">
+      <div class="page page--home container">
         <h1>Home</h1>
       </div>
     `;

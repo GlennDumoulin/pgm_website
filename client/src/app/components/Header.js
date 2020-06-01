@@ -13,21 +13,21 @@ class Header {
             </a>
           </div>
           <div class="nav_btn btn-hamburger"><i class="fas fa-bars"></i></div>
-          <ul class="nav_list row justify-content-between">
-            <li class="nav_item"><a href="${routes.OPLEIDING}" data-navigo>Opleiding</a></li>
-            <li class="nav_item"><a href="${routes.PGMTEAM}" data-navigo>PGM-Team</a></li>
-            <li class="nav_item"><a href="${routes.PORTFOLIO}" data-navigo>Portfolio</a></li>
-            <li class="nav_item"><a href="${routes.NIEUWS}" data-navigo>Nieuws</a></li>
-            <li class="nav_item"><a href="${routes.WERKPLEKLEREN}" data-navigo>Werkplekleren</a></li>
-            <li class="nav_item"><a href="${routes.CONTACT}" data-navigo>Contact</a></li>
+          <ul class="nav__list row justify-content-between">
+            <li class="nav__item"><a href="${routes.OPLEIDING}" data-navigo>Opleiding</a></li>
+            <li class="nav__item"><a href="${routes.PGMTEAM}" data-navigo>PGM-Team</a></li>
+            <li class="nav__item"><a href="${routes.PORTFOLIO}" data-navigo>Portfolio</a></li>
+            <li class="nav__item"><a href="${routes.NIEUWS}" data-navigo>Nieuws</a></li>
+            <li class="nav__item"><a href="${routes.WERKPLEKLEREN}" data-navigo>Werkplekleren</a></li>
+            <li class="nav__item"><a href="${routes.CONTACT}" data-navigo>Contact</a></li>
           </ul>
           <ul class="nav_hamb">
-            <li class="nav_item"><a href="${routes.OPLEIDING}" data-navigo>Opleiding</a></li>
-            <li class="nav_item"><a href="${routes.PGMTEAM}" data-navigo>PGM-Team</a></li>
-            <li class="nav_item"><a href="${routes.PORTFOLIO}" data-navigo>Portfolio</a></li>
-            <li class="nav_item"><a href="${routes.NIEUWS}" data-navigo>Nieuws</a></li>
-            <li class="nav_item"><a href="${routes.WERKPLEKLEREN}" data-navigo>Werkplekleren</a></li>
-            <li class="nav_item"><a href="${routes.CONTACT}" data-navigo>Contact</a></li>
+            <li class="nav__item"><a href="${routes.OPLEIDING}" data-navigo>Opleiding</a></li>
+            <li class="nav__item"><a href="${routes.PGMTEAM}" data-navigo>PGM-Team</a></li>
+            <li class="nav__item"><a href="${routes.PORTFOLIO}" data-navigo>Portfolio</a></li>
+            <li class="nav__item"><a href="${routes.NIEUWS}" data-navigo>Nieuws</a></li>
+            <li class="nav__item"><a href="${routes.WERKPLEKLEREN}" data-navigo>Werkplekleren</a></li>
+            <li class="nav__item"><a href="${routes.CONTACT}" data-navigo>Contact</a></li>
           </ul>
         </nav>
       </header>
@@ -51,24 +51,24 @@ class Header {
   }
 
   updateActiveLink (route) {
-    const prevActiveMenuItemElement = document.querySelector(`.nav_list > .nav_item > a[class*="active"]`);
+    const prevActiveMenuItemElement = document.querySelector(`.nav__list > .nav__item > a[class*="active"]`);
     if (prevActiveMenuItemElement) {
       prevActiveMenuItemElement.classList.remove('active', 'underline');
     }
     const link = route.replace('#!', '');
-    const menuItemElement = document.querySelector(`.nav_list > .nav_item > a[href*="${link}"]`);
+    const menuItemElement = document.querySelector(`.nav__list > .nav__item > a[href*="${link}"]`);
     if (menuItemElement) {
       menuItemElement.classList.add('active', 'underline');
     }
   }
 
   updateMobileActiveLink (route) {
-    const prevActiveMenuItemElement = document.querySelector(`.nav_hamb > .nav_item > a[class*="active"]`);
+    const prevActiveMenuItemElement = document.querySelector(`.nav_hamb > .nav__item > a[class*="active"]`);
     if (prevActiveMenuItemElement) {
       prevActiveMenuItemElement.classList.remove('active', 'underline');
     }
     const link = route.replace('#!', '');
-    const menuItemElement = document.querySelector(`.nav_hamb > .nav_item > a[href*="${link}"]`);
+    const menuItemElement = document.querySelector(`.nav_hamb > .nav__item > a[href*="${link}"]`);
     if (menuItemElement) {
       menuItemElement.classList.add('active', 'underline');
     }

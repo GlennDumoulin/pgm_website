@@ -1,7 +1,7 @@
 class StudentDetailPage {
   async render () {
     return `
-      <div class="page page--student_detail">
+      <div class="page page--student_detail container">
         <h1>Student detail</h1>
       </div>
     `;

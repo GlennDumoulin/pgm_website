@@ -1,7 +1,7 @@
 class CaseDetailPage {
   async render () {
     return `
-      <div class="page page--case_detail">
+      <div class="page page--case_detail container">
         <h1>Case detail</h1>
       </div>
     `;

@@ -1,7 +1,7 @@
 class WerkpleklerenPage {
   async render () {
     return `
-      <div class="page page--werkplekleren">
+      <div class="page page--werkplekleren container">
         <h1>Werkplekleren</h1>
       </div>
     `;

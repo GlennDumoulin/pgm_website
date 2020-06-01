@@ -1,6 +1,7 @@
 * {
     margin-block-start: 0em;
     margin-block-end: 0em;
+    box-sizing: border-box;
 }
 
 html {
@@ -24,11 +25,7 @@ body {
 
 h1, h2, h3, h4 {
     font-family: $font-family_stardos-stencil;
-    text-shadow: $color-dark-turqouise-m 4px -3px;
     margin: 25px 0 10px;
-    @media (max-width: 768px) {
-        text-shadow: $color-dark-turqouise-m 3px -2px;
-    }
 }
 
 h1 {
@@ -89,6 +86,7 @@ i {
     padding: 15px;
     &.no-borders {
         border: none;
+        padding: 5px;
     }
 }
 
@@ -97,4 +95,32 @@ i {
     height: 3px;
     margin: 0;
     background-color: $color-turqouise-m;
+}
+
+.page {
+    padding: 25px 0;
+    background-color: $color-black_bg--50;
+    & .card {
+        background-color: $color-black_bg--50;
+        color: $color-whitish_m;
+        border: 4px solid $color-dark-turqouise-m;
+        border-radius: 25px;
+        margin-bottom: 32px;
+        &__image {
+            width: 100%;
+            border-radius: 21px 21px 0 0;
+            padding-bottom: 20px;
+        }
+        &__info {
+            padding-bottom: 10px;
+            margin: 5px 10px;
+            & i {
+                color: $color-whitish_m;
+                margin-right: 5px;
+            }
+        }
+        & a {
+            color: $color-whitish_m;
+        }
+    }
 }

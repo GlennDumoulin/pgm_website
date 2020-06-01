@@ -1,7 +1,7 @@
 class NieuwsPage {
   async render () {
     return `
-      <div class="page page--nieuws">
+      <div class="page page--nieuws container">
         <h1>Nieuws</h1>
       </div>
     `;

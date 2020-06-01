@@ -1,0 +1,8 @@
+.team-list {
+    margin-bottom: 50px;
+    & .card {
+        & li {
+            padding-bottom: 5px;
+        }
+    }
+}

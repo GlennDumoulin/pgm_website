@@ -1,7 +1,7 @@
 class PortfolioPage {
   async render () {
     return `
-      <div class="page page--portfolio">
+      <div class="page page--portfolio container">
         <h1>Portfolio</h1>
       </div>
     `;

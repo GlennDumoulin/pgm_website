@@ -12,7 +12,7 @@
                 width: 40%;
             }
         }
-        &_list {
+        &__list {
             width: 70%;
             @media (max-width: 992px) {
                 width: 75%;
@@ -31,7 +31,7 @@
                 display: none !important;
             }
         }
-        &_item {
+        &__item {
             font-size: calc(8vw / 6);
             text-transform: uppercase;
             @media (max-width: 992px) {
