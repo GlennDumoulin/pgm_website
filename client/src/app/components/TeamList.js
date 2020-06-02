@@ -10,7 +10,6 @@ class TeamList {
     if (this.n !== null) {
       team = team.slice(0, this.n);
     }
-    team.sort((a, b) => a.name.localeCompare(b.name));
     return team.map(member => `
       <div class="col-6 col-md-4 col-lg-3">
         <div class="card team-list__item">
