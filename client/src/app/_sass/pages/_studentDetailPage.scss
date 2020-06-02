@@ -1,0 +1,74 @@
+.student {
+    margin-bottom: 75px;
+    @media (max-width: 767px) {
+        margin-bottom: 25px;
+    }
+    & .btn-back {
+        & i {
+            transition: all 0.3s ease-in-out;
+            &:hover {
+                color: $color-whitish_m;
+                border-color: $color-whitish_m;
+            }
+        }
+    }
+    &-basic {
+        margin-bottom: 50px;
+    }
+    &-about {
+        background-color: $color-black_bg--50;
+        border: 4px solid $color-dark-turqouise_m;
+        border-radius: 25px;
+        &__left-col {
+            border-right: 4px solid $color-dark-turqouise_m;
+            text-align: center;
+            padding-bottom: 25px;
+            & i {
+                color: $color-turqouise_m;
+                text-shadow: $color-dark-turqouise_m 4px -3px;
+            }
+            @media (max-width: 767px) {
+                border-right: none;
+                border-bottom: 4px solid $color-dark-turqouise_m;
+                padding-bottom: 10px;
+            }
+        }
+        &__right-col {
+            & h2 {
+                padding-left: 25px;
+            }
+        }
+        &__image {
+            width: 100%;
+            height: 375px;
+            object-fit: cover;
+            border-radius: 21px 0 0 0;
+            padding-bottom: 25px;
+            @media (max-width: 767px) {
+                border-radius: 21px 21px 0 0;
+            }
+        }
+        &__description {
+            padding: 50px 25px 75px;
+            @media (max-width: 992px) {
+                padding: 25px 25px 10px;
+            }
+        }
+        &__list {
+            padding: 25px;
+            flex-wrap: wrap;
+            @media (max-width: 992px) {
+                padding-top: 10px;
+            }
+        }
+        &__item {
+            color: #000;
+            background-color: $color-grey_m;
+            padding: 10px 15px;
+            border: 3px solid $color-dark-turqouise_m;
+            border-radius: 25px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+        }
+    }
+}

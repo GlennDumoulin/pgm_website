@@ -97,13 +97,19 @@ form {
     }
     & input, select, button {
         font-size: 16px;
-        background-color: $color-whitish_m;
+        background-color: $color-grey_m;
         border: 3px solid $color-dark-turqouise-m;
         border-radius: 25px;
         padding: 10px 20px;
         margin-right: 25px;
         & i {
             color: #000;
+        }
+    }
+    & button {
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            background-color: $color-whitish_m;
         }
     }
     & option {
