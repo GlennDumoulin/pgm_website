@@ -33,7 +33,7 @@ class StudentsList {
       return array.map(student => `
         <div class="col-6 col-md-4 col-lg-3">
           <div class="card students-list__item">
-            <a href="#!/${routes.STUDENT_DETAIL.replace(':id', student.id)}">
+            <a href="#!${routes.STUDENT_DETAIL.replace(':id', student.id)}">
               <img src="${student.fields.img[0].thumbnails.large.url}" alt="Image of ${student.fields.name_first}" class="card__image">
               <div class="d-flex card__info">
                 <i class="fas fa-user no-borders"></i>

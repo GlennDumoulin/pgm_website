@@ -13,12 +13,6 @@ class BAAS {
     return jsonData;
   }
 
-  static getTeamMember = async (id) => {
-    const response = await fetch(`${DOMAIN}/data/team/index.json`);
-    const jsonData = await response.json();
-    return jsonData.find(member => member.id === id);
-  }
-
   static getStudents = async () => {
     const response = await fetch(`${DOMAIN}/data/students/index.json`);
     const jsonData = await response.json();

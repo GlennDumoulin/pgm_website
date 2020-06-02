@@ -14,6 +14,7 @@ class CaseDetailPage {
 
   async mount () {
     // Before the rendering of the page
+    window.scrollTo(0, 0);
     return this;
   }
 

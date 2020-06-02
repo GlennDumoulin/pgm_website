@@ -39,7 +39,6 @@ class Header {
     // Connect the listeners
     const btnHamburger = document.querySelector('.btn-hamburger');
     btnHamburger.addEventListener('click', (ev) => {
-      console.log(ev);
       const hambNav = document.querySelector('.nav_hamb');
       if (hambNav.style.display === 'block') {
         hambNav.style.display = 'none';
