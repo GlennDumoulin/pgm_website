@@ -1,0 +1,55 @@
+.case {
+    & .btn-back {
+        & i {
+            transition: all 0.3s ease-in-out;
+            &:hover {
+                color: $color-whitish_m;
+                border-color: $color-whitish_m;
+            }
+        }
+    }
+    &-basic {
+        margin-bottom: 30px;
+    }
+    &-about {
+        margin-bottom: 25px;
+        &__side-info {
+            & .makers {
+                padding-bottom: 10px;
+                & p{
+                    padding-right: 5px;
+                    padding-bottom: 0;
+                }
+            }
+            & p {
+                padding-bottom: 5px;
+            }
+        }
+    }
+    &-images {
+        &__image {
+            margin-bottom: 20px;
+        }
+    }
+    &-tags {
+        margin-bottom: 50px;
+        & i {
+            color: $color-turqouise_m;
+        }
+        & p {
+            color: $color-dark-turqouise_m;
+            background-color: $color-grey_m;
+            border: 3px solid $color-dark-turqouise_m;
+            border-radius: 25px;
+            padding: 10px 15px;
+            margin-right: 15px;
+        }
+    }
+    &-technologies {
+        margin-bottom: 50px;
+        & img {
+            width: 125px;
+            height: auto;
+        }
+    }
+}

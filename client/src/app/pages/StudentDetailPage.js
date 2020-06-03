@@ -3,10 +3,6 @@ import { BAAS } from '../services';
 import { routes } from '../router';
 
 class StudentDetailPage {
-  constructor (n = null) {
-    this.n = n;
-  }
-
   async getStudent () {
     const searchLink = window.location.hash;
     const searchId = searchLink.substring(searchLink.lastIndexOf('/') + 1);

@@ -7,7 +7,10 @@ class CasesList {
     this.n = n;
   }
 
-  async getCases (filter) {
+  async getCases (filter = {
+    course: 'all',
+    year: 'all',
+  }) {
     let cases = await BAAS.getCases();
     if (this.n !== null) {
       cases = cases.slice(0, this.n);
@@ -25,31 +28,37 @@ class CasesList {
       });
     }
     console.log(cases);
-    return this.displayCases(cases);
+    return this.checkArrayLength(cases);
   }
 
   async displayCases (array) {
-    if (array.length === 0) {
-      return `<p>Er zijn geen resultaten gevonden.</p>`;
-    /* eslint-disable no-else-return */
-    } else {
-      return array.map(project => `
-        <div class="col-12 col-md-6">
-          <a href="#!${routes.CASE_DETAIL.replace(':id', project.id)}">
-            <div class="card cases-list__item">
-              <img src="${this.getThumbnail(project.images).src}" alt="Thumbnail for ${project.title}" class="card__image">
-              <span>${project.course}</span>
-              <div class="card__info">
-                <h2><i class="fas fa-info-circle no-borders"></i> ${project.title}</h2>
-              </div>
-              <div class="card__info">
-                <p><i class="fas fa-calendar-alt no-borders"></i> created in ${project.yearCreated}</p>
-              </div>
+    return array.map(project => `
+      <div class="col-12 col-md-6">
+        <a href="#!${routes.CASE_DETAIL.replace(':id', project.id)}">
+          <div class="card cases-list__item">
+            <img src="${this.getThumbnail(project.images).src}" alt="Thumbnail for ${project.title}" class="card__image">
+            <span>${project.course}</span>
+            <div class="card__info">
+              <p><i class="fas fa-info-circle no-borders"></i> ${project.title}</p>
             </div>
-          </a>
-        </div>
-      `).join('');
+            <div class="card__info">
+              <p><i class="fas fa-calendar-alt no-borders"></i> created in ${project.yearCreated}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    `).join('');
+  }
+
+  checkArrayLength (array) {
+    if (array.length === 0) {
+      console.log('Array is empty');
+      return `<p>Er zijn geen resultaten gevonden.</p>`;
     }
+    if (array.length !== 0) {
+      return this.displayCases(array);
+    }
+    return this;
   }
 
   getThumbnail (array) {
@@ -59,10 +68,7 @@ class CasesList {
     });
   }
 
-  async render (filter = {
-    course: 'all',
-    year: 'all',
-  }) {
+  async render () {
     return `
       <form id="cases-filter" class="row filter">
         <div class="col-12 col-md-6 d-flex align-items-center filter__section">
@@ -90,7 +96,7 @@ class CasesList {
         </div>
       </form>
       <div class="row cases-list justify-content-center">
-        ${await this.getCases(filter)}     
+        ${await this.getCases()}
       </div>
     `;
   }
@@ -108,7 +114,7 @@ class CasesList {
         year: formData.get('year'),
       };
       console.log(casesFilter);
-      this.render(casesFilter);
+      this.getCases(casesFilter);
     });
     return this;
   }

@@ -20,32 +20,38 @@ class StudentsList {
     }
     console.log(students);
     students.sort((a, b) => a.fields.name_first.localeCompare(b.fields.name_first));
-    return this.displayStudents(students);
+    return this.checkArrayLength(students);
   }
 
   async displayStudents (array) {
-    if (array.length === 0) {
-      return `<p>Er zijn geen resultaten gevonden.</p>`;
-    /* eslint-disable no-else-return */
-    } else {
-      return array.map(student => `
-        <div class="col-6 col-md-4 col-lg-3">
-          <a href="#!${routes.STUDENT_DETAIL.replace(':id', student.id)}">
-            <div class="card students-list__item">
-              <img src="${student.fields.img[0].thumbnails.large.url}" alt="Image of ${student.fields.name_first}" class="card__image">
-              <div class="d-flex card__info">
-                <i class="fas fa-user no-borders"></i>
-                <p>${student.fields.name_first} ${student.fields.name_last}</p>
-              </div>
-              <div class="d-flex card__info">
-                <i class="fas fa-calendar-alt no-borders"></i>
-                <p>${student.fields.generation}</p>
-              </div>
+    return array.map(student => `
+      <div class="col-6 col-md-4 col-lg-3">
+        <a href="#!${routes.STUDENT_DETAIL.replace(':id', student.id)}">
+          <div class="card students-list__item">
+            <img src="${student.fields.img[0].thumbnails.large.url}" alt="Image of ${student.fields.name_first}" class="card__image">
+            <div class="d-flex card__info">
+              <i class="fas fa-user no-borders"></i>
+              <p>${student.fields.name_first} ${student.fields.name_last}</p>
             </div>
-          </a>
-        </div>
-      `).join('');
+            <div class="d-flex card__info">
+              <i class="fas fa-calendar-alt no-borders"></i>
+              <p>${student.fields.generation}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    `).join('');
+  }
+
+  checkArrayLength (array) {
+    if (array.length === 0) {
+      console.log('Array is empty');
+      return `<p>Er zijn geen resultaten gevonden.</p>`;
     }
+    if (array.length !== 0) {
+      return this.displayStudents(array);
+    }
+    return this;
   }
 
   async render (filter = 'all') {

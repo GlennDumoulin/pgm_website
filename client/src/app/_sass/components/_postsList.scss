@@ -21,6 +21,9 @@
                 padding: 0 30px;
                 padding-bottom: 15px;
             }
+            & h2 {
+                color: $color-turqouise_m;
+            }
             & .read-more {
                 text-decoration: underline;
                 transition: all 0.3s ease-in-out;
