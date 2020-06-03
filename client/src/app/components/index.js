@@ -3,6 +3,7 @@ import Footer from './Footer';
 import TeamList from './TeamList';
 import StudentsList from './StudentsList';
 import CasesList from './CasesList';
+import PostsList from './PostsList';
 
 export {
   Header,
@@ -10,4 +11,5 @@ export {
   TeamList,
   StudentsList,
   CasesList,
+  PostsList,
 };
