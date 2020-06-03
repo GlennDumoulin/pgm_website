@@ -2,20 +2,18 @@ import { BAAS } from '../services';
 
 import { routes } from '../router';
 
-let students = [];
-
 class StudentsList {
   constructor (n = null) {
     this.n = n;
   }
 
   async getStudents (filter) {
-    students = await BAAS.getStudents();
+    let students = await BAAS.getStudents();
     if (this.n !== null) {
       students = students.slice(0, this.n);
     }
     if (filter !== 'all') {
-      /* eslint-disable-next-line */
+      /* eslint-disable arrow-body-style */
       students = students.filter((student) => {
         return (student.fields.generation === filter);
       });
@@ -28,12 +26,12 @@ class StudentsList {
   async displayStudents (array) {
     if (array.length === 0) {
       return `<p>Er zijn geen resultaten gevonden.</p>`;
-    /* eslint-disable-next-line */
+    /* eslint-disable no-else-return */
     } else {
       return array.map(student => `
         <div class="col-6 col-md-4 col-lg-3">
-          <div class="card students-list__item">
-            <a href="#!${routes.STUDENT_DETAIL.replace(':id', student.id)}">
+          <a href="#!${routes.STUDENT_DETAIL.replace(':id', student.id)}">
+            <div class="card students-list__item">
               <img src="${student.fields.img[0].thumbnails.large.url}" alt="Image of ${student.fields.name_first}" class="card__image">
               <div class="d-flex card__info">
                 <i class="fas fa-user no-borders"></i>
@@ -43,8 +41,8 @@ class StudentsList {
                 <i class="fas fa-calendar-alt no-borders"></i>
                 <p>${student.fields.generation}</p>
               </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
       `).join('');
     }
@@ -52,7 +50,7 @@ class StudentsList {
 
   async render (filter = 'all') {
     return `
-      <form id="set-filter" class="d-flex align-items-center filter">
+      <form id="students-filter" class="d-flex align-items-center filter">
         <label for="year" class="filter__label">Filter op jaar:</label>
         <select id="year" name="year" class="filter__item">
           <option value="all">geen filter</option>
@@ -61,7 +59,7 @@ class StudentsList {
         </select>
         <button type="submit" class="filter__button">Pas filter toe <i class="fas fa-filter no-borders"></i></button>
       </form>
-      <div class="row students-list align-items-start justify-content-center">
+      <div class="row students-list justify-content-center">
         ${await this.getStudents(filter)}     
       </div>
     `;
@@ -69,11 +67,11 @@ class StudentsList {
 
   async afterRender () {
     // Connect the listeners
-    const filterForm = document.getElementById('set-filter');
+    const filterForm = document.getElementById('students-filter');
     filterForm.addEventListener(('submit'), (ev) => {
       ev.preventDefault();
 
-      /* eslint-disable-next-line */
+      /* eslint-disable no-undef */
       const formData = new FormData(filterForm);
       const studentsFilter = formData.get('year');
       console.log(studentsFilter);

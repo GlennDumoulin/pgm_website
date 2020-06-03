@@ -90,12 +90,15 @@ i {
     }
 }
 
-form {
+.filter {
     margin: 25px 0 50px;
-    & label {
+    &__section {
+        margin-bottom: 20px;
+    }
+    &__label {
         padding-right: 20px;
     }
-    & input, select, button {
+    &__item {
         font-size: 16px;
         background-color: $color-grey_m;
         border: 3px solid $color-dark-turqouise-m;
@@ -106,7 +109,16 @@ form {
             color: #000;
         }
     }
-    & button {
+    &__button {
+        font-size: 16px;
+        background-color: $color-grey_m;
+        border: 3px solid $color-dark-turqouise-m;
+        border-radius: 25px;
+        padding: 10px 20px;
+        margin-right: 25px;
+        & i {
+            color: #000;
+        }
         transition: all 0.3s ease-in-out;
         &:hover {
             background-color: $color-whitish_m;
@@ -125,7 +137,10 @@ form {
 }
 
 .page {
-    padding: 25px 0;
+    padding: 25px 0 75px;
+    @media (max-width: 767px) {
+        padding: 25px 0;
+    }
     background-color: $color-black_bg--50;
     & .card {
         background-color: $color-black_bg--50;
@@ -136,7 +151,7 @@ form {
         &__image {
             width: 100%;
             border-radius: 21px 21px 0 0;
-            padding-bottom: 20px;
+            padding-bottom: 10px;
         }
         &__info {
             padding-bottom: 10px;

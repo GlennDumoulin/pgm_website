@@ -1,8 +1,4 @@
 .student {
-    margin-bottom: 75px;
-    @media (max-width: 767px) {
-        margin-bottom: 25px;
-    }
     & .btn-back {
         & i {
             transition: all 0.3s ease-in-out;
