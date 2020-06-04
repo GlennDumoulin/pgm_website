@@ -43,6 +43,7 @@ class Model {
 
     // Controls
     const controls = new OrbitControls(camera, canvas);
+    controls.enableZoom = false;
 
     // Scene
     const scene = new THREE.Scene();
@@ -96,11 +97,24 @@ class Model {
       }
     }
 
+    function resizeRendererToDisplaySize (renderer) {
+      const canvas = renderer.domElement;
+      const pixelRatio = window.devicePixelRatio;
+      const width  = canvas.clientWidth  * pixelRatio | 0;
+      const height = canvas.clientHeight * pixelRatio | 0;
+      const needResize = canvas.width !== width || canvas.height !== height;
+      if (needResize) {
+        renderer.setSize(width, height, false);
+      }
+      return needResize;
+    }
+
     // Animation Loop
     (function animate () {
       requestAnimationFrame(animate);
       renderer.render(scene, camera);
       rotateCar();
+      resizeRendererToDisplaySize(renderer);
     })();
   }
 
