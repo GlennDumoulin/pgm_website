@@ -18,23 +18,23 @@ class OpleidingPage {
         </div>
         <div class="opleiding__info">
           <h2>Kies waar u meer over wil weten:</h2>
-          <form id="info-selection" class="d-flex align-items-center filter opleiding__info-form">
+          <form id="info-selection" class="filter opleiding__info-form">
             <select id="title" name="title" class="filter__item">
               ${await this.compOptionsList.render()}
             </select>
             <button type="submit" class="filter__button">Lees dit artikel <i class="fas fa-book-reader no-borders"></i></button>
           </form>
-          <div class="opleiding__info-content">
-            ${await this.compArticle.render()}
-          </div>
-          <div class="opleiding__curriculum">
-            <a href="https://www.pgm.gent/info/" target="_blank">Bekijk het curriculum <i class="fas fa-send no-borders"></i></a>
-          </div>
-          <div class="opleiding__technologies">
-            <ul class="row opleiding__technologies-list">
-              ${await this.compTechnologiesList.render()}
-            </ul>
-          </div>
+        </div>
+        <div class="opleiding__info-content">
+          ${await this.compArticle.render()}
+        </div>
+        <a href="https://www.pgm.gent/info/" target="_blank" class="d-flex justify-content-center opleiding__curriculum">
+          <p>Bekijk het curriculum <i class="fas fa-location-arrow no-borders"></i></p>
+        </a>
+        <div class="opleiding__technologies">
+          <ul class="row opleiding__technologies-list">
+            ${await this.compTechnologiesList.render()}
+          </ul>
         </div>
       </div>
     `;

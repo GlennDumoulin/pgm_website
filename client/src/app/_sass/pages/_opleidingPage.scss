@@ -1,0 +1,43 @@
+.opleiding {
+    &__info {
+        &-form {
+            @media (max-width: 767px) {
+                button {
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+    &__curriculum {
+        background-color: $color-black_bg--50;
+        width: fit-content;
+        margin: 100px auto;
+        padding: 30px 150px;
+        border: 4px solid $color-dark-turqouise_m;
+        border-radius: 25px;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            border-color: $color-green_m;
+        }
+        & p {
+            padding-bottom: 0;
+            & i {
+                color: $color-turqouise_m;
+            }
+        }
+        @media (max-width: 767px) {
+            margin: 50px auto;
+            padding: 20px 75px;
+        }
+    }
+    &__technologies {
+        margin-bottom: 50px;
+        & li {
+            margin-bottom: 75px;
+            & img {
+                width: 125px;
+                height: auto;
+            }
+        }
+    }
+}

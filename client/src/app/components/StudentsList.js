@@ -60,9 +60,7 @@ class StudentsList {
 
   async render (filter = 'all') {
     return `
-      <div class="row students-list justify-content-center">
-        ${await this.getStudents(filter)}     
-      </div>
+      ${await this.getStudents(filter)}
     `;
   }
 

@@ -24,6 +24,9 @@
             & p {
                 padding-bottom: 5px;
             }
+            @media (max-width: 767px) {
+                margin-top: 25px;
+            }
         }
     }
     &-images {

@@ -34,7 +34,9 @@ class PortfolioPage {
             <button type="submit" class="filter__button">Pas filters toe <i class="fas fa-filter no-borders"></i></button>
           </div>
         </form>
-        ${await this.compCasesList.render()}
+        <div class="row cases-list justify-content-center">
+          ${await this.compCasesList.render()}
+        </div>
       </div>
     `;
   }

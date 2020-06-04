@@ -37,9 +37,7 @@ class TeamList {
 
   async render () {
     return `
-      <div class="row team-list align-items-start justify-content-center">
-        ${await this.getTeam()}
-      </div>
+      ${await this.getTeam()}
     `;
   }
 

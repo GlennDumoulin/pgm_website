@@ -74,9 +74,7 @@ class CasesList {
 
   async render (filter) {
     return `
-      <div class="row cases-list justify-content-center">
-        ${await this.getCases(filter)}
-      </div>
+      ${await this.getCases(filter)}
     `;
   }
 

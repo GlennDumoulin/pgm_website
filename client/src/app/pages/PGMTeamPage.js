@@ -11,7 +11,9 @@ class PGMTeamPage {
       <div class="page page--team container">
         <h1>PGM-Team</h1>
         <h2>PGM-medewerkers</h2>
-        ${await this.compTeamList.render()}
+        <div class="row team-list align-items-start justify-content-center">
+          ${await this.compTeamList.render()}
+        </div>
         <h2>Studenten</h2>
         <form id="students-filter" class="d-flex align-items-center filter">
           <label for="year" class="filter__label">Filter op jaar:</label>
@@ -22,7 +24,9 @@ class PGMTeamPage {
           </select>
           <button type="submit" class="filter__button">Pas filter toe <i class="fas fa-filter no-borders"></i></button>
         </form>
-        ${await this.compStudentsList.render()}
+        <div class="row students-list justify-content-center">
+          ${await this.compStudentsList.render()}
+        </div>
       </div>
     `;
   }

@@ -61,7 +61,9 @@ class CaseDetailPage {
           </div>
           <div class="case-related">
             <h2>Bekijk ook</h2>
-            ${await this.compCasesList.render()}
+            <div class="row cases-list justify-content-center">
+              ${await this.compCasesList.render()}
+            </div>
           </div>
         </div>
       `;
@@ -110,7 +112,9 @@ class CaseDetailPage {
           </div>
           <div class="case-related">
             <h2>Bekijk ook</h2>
-            ${await this.compCasesList.render()}
+            <div class="row cases-list justify-content-center">
+              ${await this.compCasesList.render()}
+            </div>
           </div>
         </div>
       `;
