@@ -55,7 +55,7 @@ class PortfolioPage {
         year: formData.get('year'),
       };
       console.log(casesFilter);
-      this.compCasesList.render(casesFilter);
+      this.compCasesList.replaceContent(casesFilter);
     });
     return this;
   }

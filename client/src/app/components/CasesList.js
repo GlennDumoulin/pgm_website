@@ -68,6 +68,12 @@ class CasesList {
     });
   }
 
+  async replaceContent (filter) {
+    const contentWrapper = document.querySelector('.cases-list');
+    contentWrapper.innerHTML = await this.render(filter);
+    return this;
+  }
+
   async render (filter) {
     return `
       <div class="row cases-list justify-content-center">

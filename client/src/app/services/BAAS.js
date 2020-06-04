@@ -1,10 +1,22 @@
 const DOMAIN = 'https://pgmgent-1920-students.github.io/case1-pgm-website-baas-glendumo';
 
 class BAAS {
-  static getOpleiding = async () => {
+  static getOpleidingsInfo = async () => {
     const response = await fetch(`${DOMAIN}/data/opleiding/index.json`);
     const jsonData = await response.json();
-    return jsonData;
+    return jsonData[0].articles;
+  }
+
+  static getArticle = async (title) => {
+    const response = await fetch(`${DOMAIN}/data/opleiding/index.json`);
+    const jsonData = await response.json();
+    return jsonData[0].articles.find(article => article.title === title);
+  }
+
+  static getTechnologies = async () => {
+    const response = await fetch(`${DOMAIN}/data/opleiding/index.json`);
+    const jsonData = await response.json();
+    return jsonData[1].technologies;
   }
 
   static getTeam = async () => {

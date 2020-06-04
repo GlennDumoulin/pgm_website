@@ -7,6 +7,10 @@ class StudentDetailPage {
     const searchLink = window.location.hash;
     const searchId = searchLink.substring(searchLink.lastIndexOf('/') + 1);
     const student = await BAAS.getStudent(searchId);
+    if (student === undefined) {
+      window.location.assign('#!/404');
+      return ``;
+    }
     return `
       <div class="student">
         <div class="row student-basic">

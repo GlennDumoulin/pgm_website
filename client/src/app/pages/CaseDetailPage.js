@@ -14,6 +14,10 @@ class CaseDetailPage {
     const searchLink = window.location.hash;
     const searchId = searchLink.substring(searchLink.lastIndexOf('/') + 1);
     const project = await BAAS.getCase(searchId);
+    if (project === undefined) {
+      window.location.assign('#!/404');
+      return ``;
+    }
     if (project.is3d === false) {
       return `
         <div class="case">
