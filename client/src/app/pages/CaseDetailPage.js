@@ -2,11 +2,12 @@ import { BAAS } from '../services';
 
 import { routes } from '../router';
 
-import { CasesList } from '../components';
+import { CasesList, Model } from '../components';
 
 class CaseDetailPage {
   constructor () {
     this.compCasesList = new CasesList(2);
+    this.compModel = new Model();
   }
 
   async getCase () {
@@ -62,6 +63,7 @@ class CaseDetailPage {
       `;
     }
     if (project.is3d === true) {
+      this.getModel(project.images);
       return `
         <div class="case">
           <div class="row case-basic">
@@ -87,8 +89,8 @@ class CaseDetailPage {
               <p>Vak: ${project.course}</p>
             </div>
           </div>
-          <div class="case-model">
-            <p>Hier komt een 3d model!</p>
+          <div class="row justify-content-center">
+            <canvas class="case-model"></canvas>
           </div>
           <div class="case-tags">
             <h2><i class="fas fa-tags no-borders"></i> Tags</h2>
@@ -139,6 +141,14 @@ class CaseDetailPage {
     `).join('');
   }
 
+  getModel (array) {
+    /* eslint-disable arrow-body-style */
+    const model = array.find((image) => {
+      return (image.thumbnail === false);
+    });
+    window.sessionStorage.setItem('model', JSON.stringify(model));
+  }
+
   async render () {
     return `
       <div class="page page--case_detail container">
@@ -150,6 +160,8 @@ class CaseDetailPage {
   async afterRender () {
     // afterRender all components on the page
     this.compCasesList.afterRender();
+    this.compModel.render(JSON.parse(window.sessionStorage.getItem('model')));
+    this.compModel.afterRender();
 
     // Connect the listeners
     return this;
