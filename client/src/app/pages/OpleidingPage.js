@@ -54,7 +54,6 @@ class OpleidingPage {
       /* eslint-disable no-undef */
       const formData = new FormData(selectionForm);
       const selectedArticle = formData.get('title');
-      console.log(selectedArticle);
       this.compArticle.replaceContent(selectedArticle);
     });
     return this;

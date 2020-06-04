@@ -40,7 +40,6 @@ class PGMTeamPage {
       /* eslint-disable no-undef */
       const formData = new FormData(filterForm);
       const studentsFilter = formData.get('year');
-      console.log(studentsFilter);
       this.compStudentsList.replaceContent(studentsFilter);
     });
     return this;

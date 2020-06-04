@@ -54,7 +54,6 @@ class PortfolioPage {
         course: formData.get('course'),
         year: formData.get('year'),
       };
-      console.log(casesFilter);
       this.compCasesList.replaceContent(casesFilter);
     });
     return this;

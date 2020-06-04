@@ -27,7 +27,6 @@ class CasesList {
         return (project.yearCreated === filter.year);
       });
     }
-    console.log(cases);
     return this.checkArrayLength(cases);
   }
 
@@ -52,7 +51,6 @@ class CasesList {
 
   checkArrayLength (array) {
     if (array.length === 0) {
-      console.log('Array is empty');
       return `<p>Er zijn geen resultaten gevonden.</p>`;
     }
     if (array.length !== 0) {
