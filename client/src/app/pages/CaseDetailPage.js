@@ -160,8 +160,12 @@ class CaseDetailPage {
   async afterRender () {
     // afterRender all components on the page
     this.compCasesList.afterRender();
-    this.compModel.render(JSON.parse(window.sessionStorage.getItem('model')));
-    this.compModel.afterRender();
+
+    const modelContainer = document.querySelector('.case-model');
+    if (modelContainer !== null) {
+      this.compModel.render(JSON.parse(window.sessionStorage.getItem('model')));
+      this.compModel.afterRender();
+    }
 
     // Connect the listeners
     return this;
