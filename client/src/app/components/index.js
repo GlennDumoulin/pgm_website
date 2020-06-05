@@ -8,6 +8,8 @@ import StudentsList from './StudentsList';
 import CasesList from './CasesList';
 import Model from './3dModel';
 import PostsList from './PostsList';
+import ContactMap from './ContactMap';
+import ContactsList from './ContactsList';
 
 export {
   Header,
@@ -20,4 +22,6 @@ export {
   CasesList,
   Model,
   PostsList,
+  ContactMap,
+  ContactsList,
 };

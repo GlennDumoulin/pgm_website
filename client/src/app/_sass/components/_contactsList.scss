@@ -1,0 +1,13 @@
+.contact__list {
+    .card {
+        &__info {
+            & a {
+                text-decoration: underline;
+                transition: all 0.3s ease-in-out;
+            }
+            &:hover a {
+                color: $color-turqouise_m;
+            }
+        }
+    }
+}

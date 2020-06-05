@@ -11,7 +11,7 @@ class PGMTeamPage {
       <div class="page page--team container">
         <h1>PGM-Team</h1>
         <h2>PGM-medewerkers</h2>
-        <div class="row team-list align-items-start justify-content-center">
+        <div class="row team-list justify-content-center">
           ${await this.compTeamList.render()}
         </div>
         <h2>Studenten</h2>

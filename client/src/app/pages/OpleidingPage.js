@@ -24,9 +24,9 @@ class OpleidingPage {
             </select>
             <button type="submit" class="filter__button">Lees dit artikel <i class="fas fa-book-reader no-borders"></i></button>
           </form>
-        </div>
-        <div class="opleiding__info-content">
-          ${await this.compArticle.render()}
+          <div class="opleiding__info-content">
+            ${await this.compArticle.render()}
+          </div>
         </div>
         <a href="https://www.pgm.gent/info/" target="_blank" class="d-flex justify-content-center opleiding__curriculum">
           <p>Bekijk het curriculum <i class="fas fa-location-arrow no-borders"></i></p>

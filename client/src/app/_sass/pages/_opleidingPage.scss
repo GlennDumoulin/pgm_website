@@ -7,6 +7,14 @@
                 }
             }
         }
+        &-content {
+            & .smaller-image {
+                width: 60%;
+                @media (max-width: 767px) {
+                    width: 80%;
+                }
+            }
+        }
     }
     &__curriculum {
         background-color: $color-black_bg--50;
