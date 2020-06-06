@@ -11,7 +11,7 @@ class TeamList {
       team = team.slice(0, this.n);
     }
     return team.map(member => `
-      <div class="col-6 col-lg-4">
+      <div class="col-9 col-md-6 col-lg-4">
         <div class="card team-list__item">
           <img src="${member.thumbnail}" alt="Image of ${member.name}" class="card__image">
           <div class="d-flex card__info">

@@ -1,0 +1,9 @@
+.students {
+    & .filter {
+        &__button {
+            @media (max-width: 767px) {
+                margin-top: 20px;
+            }
+        }
+    }
+}
