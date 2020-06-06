@@ -1,12 +1,18 @@
+// imports
 import { BAAS } from '../services';
 
 import { routes } from '../router';
 
+// class to display posts
 class PostsList {
+  // constructor to specify the amount of posts you would like
   constructor (n = null) {
     this.n = n;
   }
 
+  // get data of the posts from the BAAS
+  // select n random items from the array
+  // sort the data based on the created at date
   async getPosts () {
     let posts = await BAAS.getPosts();
     if (this.n !== null) {
@@ -21,6 +27,7 @@ class PostsList {
     return this.displayPosts(posts);
   }
 
+  // sort the array
   sortOnDate (a, b) {
     let order = 0;
     if (a.createdAt < b.createdAt) {
@@ -32,6 +39,7 @@ class PostsList {
     return order;
   }
 
+  // display the content for the posts
   async displayPosts (array) {
     return array.map(post => `
       <div class="container">
@@ -47,6 +55,7 @@ class PostsList {
     `).join('');
   }
 
+  // render the content
   async render () {
     return `
       <div class="posts-list justify-content-center">
@@ -61,4 +70,5 @@ class PostsList {
   }
 }
 
+// exporting the class
 export default PostsList;

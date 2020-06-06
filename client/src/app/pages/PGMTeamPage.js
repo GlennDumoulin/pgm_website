@@ -1,11 +1,15 @@
+// imports
 import { TeamList, StudentsList } from '../components';
 
+// class to display team page
 class PGMTeamPage {
+  // constructor for used components
   constructor () {
     this.compTeamList = new TeamList();
     this.compStudentsList = new StudentsList();
   }
 
+  // render the content
   async render () {
     return `
       <div class="page page--team container">
@@ -55,6 +59,7 @@ class PGMTeamPage {
 
   async mount () {
     // Before the rendering of the page
+    // scroll to the top
     window.scrollTo(0, 0);
     return this;
   }
@@ -65,4 +70,5 @@ class PGMTeamPage {
   }
 }
 
+// exporting the class
 export default PGMTeamPage;

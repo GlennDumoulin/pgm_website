@@ -1,11 +1,15 @@
+// imports
 import Navigo from 'navigo';
 
+// class to create a Router based on Navigo
 class Router {
+  // constructor for the container and router
   constructor (container) {
     this.container = container;
     this.router = new Navigo(null, true, '#!');
   }
 
+  // add a route the Router will recognize
   addRoute (location, page) {
     this.router.on(
       location,
@@ -25,6 +29,7 @@ class Router {
     );
   }
 
+  // set the page when a link is not found
   setNotFoundPage (page) {
     this.router.notFound(
       async (query) => {
@@ -33,9 +38,11 @@ class Router {
     );
   }
 
+  // resolve the router
   resolve () {
     this.router.resolve();
   }
 }
 
+// exporting the class
 export default Router;

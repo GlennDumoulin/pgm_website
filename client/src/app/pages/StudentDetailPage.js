@@ -1,8 +1,11 @@
+// imports
 import { BAAS } from '../services';
 
 import { routes } from '../router';
 
+// class to display student detail
 class StudentDetailPage {
+  // get data of selected student from the BAAS
   async getStudent () {
     const searchLink = window.location.hash;
     const searchId = searchLink.substring(searchLink.lastIndexOf('/') + 1);
@@ -41,12 +44,14 @@ class StudentDetailPage {
     `;
   }
 
+  // get the interests of a student
   getInterests (array) {
     return array.map(interest => `
       <li class="student-about__item">${interest}</li>
     `).join('');
   }
 
+  // render the content
   async render () {
     return `
       <div class="page page--student_detail container">
@@ -62,6 +67,7 @@ class StudentDetailPage {
 
   async mount () {
     // Before the rendering of the page
+    // scroll to the top
     window.scrollTo(0, 0);
     return this;
   }
@@ -72,4 +78,5 @@ class StudentDetailPage {
   }
 }
 
+// exporting the class
 export default StudentDetailPage;

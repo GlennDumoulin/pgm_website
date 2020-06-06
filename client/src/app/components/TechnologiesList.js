@@ -1,6 +1,9 @@
+// imports
 import { BAAS } from '../services';
 
+// class to display the technologies
 class TechnologiesList {
+  // get the data of the technlogies from the BAAS
   async getTechnologies () {
     const technologies = await BAAS.getTechnologies();
     return technologies.map(technologie => `
@@ -11,6 +14,7 @@ class TechnologiesList {
     `).join('');
   }
 
+  // render the content
   async render () {
     return `
       ${await this.getTechnologies()}
@@ -23,4 +27,5 @@ class TechnologiesList {
   }
 }
 
+// export the class
 export default TechnologiesList;

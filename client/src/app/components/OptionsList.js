@@ -1,5 +1,7 @@
+// imports
 import { BAAS } from '../services';
 
+// class to display all options for opleidings artikels
 class OptionsList {
   async getOpleidingsInfo () {
     const opleidingsInfo = await BAAS.getOpleidingsInfo();
@@ -8,6 +10,7 @@ class OptionsList {
     `).join('');
   }
 
+  // render the content
   async render () {
     return `
       ${await this.getOpleidingsInfo()}
@@ -20,4 +23,5 @@ class OptionsList {
   }
 }
 
+// exporting the class
 export default OptionsList;

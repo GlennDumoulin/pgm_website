@@ -1,11 +1,15 @@
+// imports
 import { ContactMap, ContactsList } from '../components';
 
+// class to display contact page
 class ContactPage {
+  // constructor for used components
   constructor () {
     this.compContactsList = new ContactsList();
     this.compContactMap = new ContactMap();
   }
 
+  // render the content
   async render () {
     return `
       <div class="page page--contact container">
@@ -65,6 +69,7 @@ class ContactPage {
 
   async mount () {
     // Before the rendering of the page
+    // scroll to the top
     window.scrollTo(0, 0);
     return this;
   }
@@ -75,4 +80,5 @@ class ContactPage {
   }
 }
 
+// exporting the class
 export default ContactPage;

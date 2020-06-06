@@ -1,15 +1,20 @@
+// imports
 import { BAAS } from '../services';
 
 import { routes } from '../router';
 
 import { CasesList, Model } from '../components';
 
+// class to display a case detail
 class CaseDetailPage {
+  // constructor for used components
   constructor () {
     this.compCasesList = new CasesList(2);
     this.compModel = new Model();
   }
 
+  // get the data of the selcted case from the BAAS
+  // check if the project is 3d or not
   async getCase () {
     const searchLink = window.location.hash;
     const searchId = searchLink.substring(searchLink.lastIndexOf('/') + 1);
@@ -122,24 +127,28 @@ class CaseDetailPage {
     return this;
   }
 
+  // get the makers of a case
   getMakers (array) {
     return array.map(maker => `
       <li>${maker}</li>
     `).join('');
   }
 
+  // get the images of a case
   getImages (array) {
     return array.map(image => `
       <img src="${image.src}" alt="Image of ${image.alt}" class="col-12 col-lg-6 case-images__image">
     `).join('');
   }
 
+  // get the tags of a case
   getTags (array) {
     return array.map(tag => `
       <p>${tag}</p>
     `).join('');
   }
 
+  // get the technologies of a case
   getTechnologies (array) {
     return array.map(technologie => `
       <li class="col-6 col-md-4 col-lg-3 d-flex flex-column align-items-center case-technologies__item">
@@ -149,6 +158,7 @@ class CaseDetailPage {
     `).join('');
   }
 
+  // get the model of a case and save it in session storage
   getModel (array) {
     /* eslint-disable arrow-body-style */
     const model = array.find((image) => {
@@ -157,6 +167,7 @@ class CaseDetailPage {
     window.sessionStorage.setItem('model', JSON.stringify(model));
   }
 
+  // render the content
   async render () {
     return `
       <div class="page page--case_detail container">
@@ -181,6 +192,7 @@ class CaseDetailPage {
 
   async mount () {
     // Before the rendering of the page
+    // scroll to the top
     window.scrollTo(0, 0);
     return this;
   }
@@ -191,4 +203,5 @@ class CaseDetailPage {
   }
 }
 
+// exporting the class
 export default CaseDetailPage;

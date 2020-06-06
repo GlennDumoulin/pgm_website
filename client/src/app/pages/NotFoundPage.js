@@ -1,4 +1,6 @@
+// class to display a 404 page when the link can not be found
 class NotFoundPage {
+  // render the content
   async render () {
     return `
       <div class="page page--404 container">
@@ -9,4 +11,5 @@ class NotFoundPage {
   }
 }
 
+// exporting the class
 export default NotFoundPage;

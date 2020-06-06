@@ -1,7 +1,10 @@
+// imports
 import ahsBuilding from '../_static/images/ahs_building.jpg';
 import compAndCode from '../_static/images/computers_and_code.jpg';
 
+// class to display werkplekleren page
 class WerkpleklerenPage {
+  // render the content
   async render () {
     return `
       <div class="page page--werkplekleren container">
@@ -28,6 +31,7 @@ class WerkpleklerenPage {
 
   async mount () {
     // Before the rendering of the page
+    // scroll to the top
     window.scrollTo(0, 0);
     return this;
   }
@@ -38,4 +42,5 @@ class WerkpleklerenPage {
   }
 }
 
+// exporting the class
 export default WerkpleklerenPage;

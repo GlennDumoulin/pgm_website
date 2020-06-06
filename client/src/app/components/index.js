@@ -1,3 +1,4 @@
+// importing all components into one index file
 import Header from './Header';
 import Footer from './Footer';
 import OptionsList from './OptionsList';
@@ -11,6 +12,7 @@ import PostsList from './PostsList';
 import ContactMap from './ContactMap';
 import ContactsList from './ContactsList';
 
+// exporting all components
 export {
   Header,
   Footer,

@@ -1,12 +1,16 @@
+// imports
 import { OptionsList, Article, TechnologiesList } from '../components';
 
+// class to display the opleidings page
 class OpleidingPage {
+  // constructor for used components
   constructor () {
     this.compOptionsList = new OptionsList();
     this.compArticle = new Article();
     this.compTechnologiesList = new TechnologiesList();
   }
 
+  // render the content
   async render () {
     return `
       <div class="page page--opleiding container">
@@ -61,6 +65,7 @@ class OpleidingPage {
 
   async mount () {
     // Before the rendering of the page
+    // scroll to the top
     window.scrollTo(0, 0);
     return this;
   }
@@ -71,4 +76,5 @@ class OpleidingPage {
   }
 }
 
+// exporting the class
 export default OpleidingPage;

@@ -1,5 +1,7 @@
+// imports
 import App from './app';
 
+// get the content container
 (async () => {
   const rootContainer = document.getElementById('root');
   const app = new App(rootContainer);

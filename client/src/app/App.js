@@ -1,3 +1,4 @@
+// imports
 import { Router, routes } from './router';
 import {
   HomePage, OpleidingPage, PGMTeamPage, StudentDetailPage, PortfolioPage, CaseDetailPage,
@@ -5,7 +6,9 @@ import {
 } from './pages';
 import { Header, Footer } from './components';
 
+// class to create basic layout
 class App {
+  // constructor for the container, pages and components
   constructor (container) {
     // Root container
     this.container = container;
@@ -28,6 +31,7 @@ class App {
     this.compFooter = new Footer();
   }
 
+  // render the content
   async render () {
     return `
     ${await this.compHeader.render()}
@@ -70,6 +74,7 @@ class App {
     this.setActiveLink();
   }
 
+  // set the active link by updating all links
   setActiveLink () {
     this.compHeader.updateActiveLink(document.location.hash);
     this.compHeader.updateMobileActiveLink(document.location.hash);
@@ -77,4 +82,5 @@ class App {
   }
 }
 
+// exporting the class
 export default App;

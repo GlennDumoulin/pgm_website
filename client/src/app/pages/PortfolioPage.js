@@ -1,10 +1,14 @@
+// imports
 import { CasesList } from '../components';
 
+// class to display the portfolio page
 class PortfolioPage {
+  // constructor for used components
   constructor () {
     this.compCasesList = new CasesList();
   }
 
+  // render the content
   async render () {
     return `
       <div class="page page--portfolio container">
@@ -63,6 +67,7 @@ class PortfolioPage {
 
   async mount () {
     // Before the rendering of the page
+    // scroll to the top
     window.scrollTo(0, 0);
     return this;
   }
@@ -73,4 +78,5 @@ class PortfolioPage {
   }
 }
 
+// exporting the class
 export default PortfolioPage;

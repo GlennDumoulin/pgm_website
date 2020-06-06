@@ -1,3 +1,4 @@
+// importing all pages into one index file
 import HomePage from './HomePage';
 import OpleidingPage from './OpleidingPage';
 import PGMTeamPage from './PGMTeamPage';
@@ -10,6 +11,7 @@ import WerkpleklerenPage from './WerkpleklerenPage';
 import ContactPage from './ContactPage';
 import NotFoundPage from './NotFoundPage';
 
+// exporting all pages
 export {
   HomePage,
   OpleidingPage,

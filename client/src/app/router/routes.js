@@ -1,3 +1,4 @@
+// exporting the different routes
 export const LANDING = '/';
 export const HOME = '/home';
 export const OPLEIDING = '/opleiding';

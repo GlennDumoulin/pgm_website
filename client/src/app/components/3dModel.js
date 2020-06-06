@@ -1,47 +1,37 @@
+// script to create a canvas for 3d to be displayed
 /* eslint-disable */
+
+// imports
 import * as THREE from 'three';
 
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
-class ColorGUIHelper {
-  constructor (object, prop) {
-    this.object = object;
-    this.prop = prop;
-  }
-
-  get value () {
-    return `#${this.object[this.prop].getHexString()}`;
-  }
-
-  set value (hexString) {
-    this.object[this.prop].set(hexString);
-  }
-}
-
+// class to load a model in the website
 class Model {
+  // set up environment & render the model
   async render (model) {
-    // Renderer
+    // renderer
     const canvas = document.querySelector('.case-model');
     const renderer = new THREE.WebGLRenderer({ canvas: canvas });
     renderer.setSize(700, 450);
     renderer.outputEncoding = THREE.sRGBEncoding;
 
-    // Camera
+    // camera
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight);
     camera.position.set(0, 0, 5);
     camera.lookAt(new THREE.Vector3(-1, 1, 1));
 
-    // Controls
+    // controls
     const controls = new OrbitControls(camera, canvas);
     controls.enableZoom = false;
 
-    // Scene
+    // scene
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0xe0f3ff);
 
-    // Lighting
+    // lighting
     const ambientLight = new THREE.AmbientLight(0x555555, 2);
     scene.add(ambientLight);
 
@@ -50,7 +40,7 @@ class Model {
     directionalLight = new THREE.DirectionalLight(0x000055, .5);
     scene.add(directionalLight);
 
-    // Loaders
+    // loaders
     let car;
     const loader = new GLTFLoader();
     loader.load(
@@ -67,6 +57,7 @@ class Model {
       }
     );
 
+    // rotate function
     const speed = { increment: .01 };
 
     function rotateCar () {
@@ -77,6 +68,7 @@ class Model {
       }
     }
 
+    // responsive resizer
     function resizeRendererToDisplaySize (renderer) {
       const canvas = renderer.domElement;
       const pixelRatio = window.devicePixelRatio;
@@ -89,7 +81,7 @@ class Model {
       return needResize;
     }
 
-    // Animation Loop
+    // animation loop
     (function animate () {
       requestAnimationFrame(animate);
       renderer.render(scene, camera);
@@ -104,4 +96,5 @@ class Model {
   }
 }
 
+// exporting the class
 export default Model;

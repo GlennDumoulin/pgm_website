@@ -1,14 +1,18 @@
+// imports
 import { BAAS } from '../services';
 
 import { routes } from '../router';
 
 import { PostsList } from '../components';
 
+// class to display nieuws detail
 class NieuwsDetailPage {
+  // constructor for used components
   constructor () {
     this.compPostsList = new PostsList(2);
   }
 
+  // get data of selected post from the BAAS
   async getPost () {
     const searchLink = window.location.hash;
     const searchId = searchLink.substring(searchLink.lastIndexOf('/') + 1);
@@ -56,22 +60,26 @@ class NieuwsDetailPage {
     `;
   }
 
+  // get a readable date of a post
   getReadableDate (date) {
     return new Date(date).toLocaleDateString();
   }
 
+  // get the authors of a post
   getAuthors (array) {
     return array.map(maker => `
       <li>${maker}</li>
     `).join('');
   }
 
+  // get the tags of a post
   getTags (array) {
     return array.map(tag => `
       <p>${tag}</p>
     `).join('');
   }
 
+  // render the content
   async render () {
     return `
       <div class="page page--nieuws_detail container">
@@ -90,6 +98,7 @@ class NieuwsDetailPage {
 
   async mount () {
     // Before the rendering of the page
+    // scroll to the top
     window.scrollTo(0, 0);
     return this;
   }
@@ -100,4 +109,5 @@ class NieuwsDetailPage {
   }
 }
 
+// exporting the class
 export default NieuwsDetailPage;

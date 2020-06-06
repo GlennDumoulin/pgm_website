@@ -1,12 +1,18 @@
+// imports
 import { BAAS } from '../services';
 
 import { routes } from '../router';
 
+// class to display cases
 class CasesList {
+  // constructor to specify how many cases you would like
   constructor (n = null) {
     this.n = n;
   }
 
+  // get the data of the cases from the BAAS
+  // select n random items from the array
+  // filter the data based on selected filters
   async getCases (filter = {
     course: 'all',
     year: 'all',
@@ -34,6 +40,7 @@ class CasesList {
     return this.checkArrayLength(cases);
   }
 
+  // display the content
   async displayCases (array) {
     return array.map(project => `
       <div class="col-12 col-md-6">
@@ -53,6 +60,7 @@ class CasesList {
     `).join('');
   }
 
+  // check if there are items that passed the filterings
   checkArrayLength (array) {
     if (array.length === 0) {
       return `<p>Er zijn geen resultaten gevonden.</p>`;
@@ -63,6 +71,7 @@ class CasesList {
     return this;
   }
 
+  // find the thumbnail in the images array
   getThumbnail (array) {
     /* eslint-disable arrow-body-style */
     return array.find((image) => {
@@ -70,12 +79,14 @@ class CasesList {
     });
   }
 
+  // replace the content after a new filter submission
   async replaceContent (filter) {
     const contentWrapper = document.querySelector('.cases-list');
     contentWrapper.innerHTML = await this.render(filter);
     return this;
   }
 
+  // render the content
   async render (filter) {
     return `
       ${await this.getCases(filter)}
@@ -88,4 +99,5 @@ class CasesList {
   }
 }
 
+// exporting the class
 export default CasesList;

@@ -1,8 +1,11 @@
+// imports
 import { routes } from '../router';
 
 import pgmLogo from '../_static/images/pgm_logo.png';
 
+// class to display the header
 class Header {
+  // render the content
   async render () {
     return `
       <header class="header">
@@ -49,6 +52,7 @@ class Header {
     return this;
   }
 
+  // update the navigation to check which link is active
   updateActiveLink (route) {
     const prevActiveMenuItemElement = document.querySelector(`.nav__list > .nav__item > a[class*="active"]`);
     if (prevActiveMenuItemElement) {
@@ -61,6 +65,7 @@ class Header {
     }
   }
 
+  // update the mobile navigation to check which link is active
   updateMobileActiveLink (route) {
     const prevActiveMenuItemElement = document.querySelector(`.nav_hamb > .nav__item > a[class*="active"]`);
     if (prevActiveMenuItemElement) {
@@ -74,4 +79,5 @@ class Header {
   }
 }
 
+// exporting the class
 export default Header;

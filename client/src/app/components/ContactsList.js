@@ -1,6 +1,10 @@
+// imports
 import { BAAS } from '../services';
 
+// class to display contacts
 class ContactsList {
+  // get the data of contacts from the BAAS
+  // sort the data based on the name
   async getContacts () {
     const contacts = await BAAS.getContacts();
     contacts.sort((a, b) => a.name.localeCompare(b.name));
@@ -25,6 +29,7 @@ class ContactsList {
     `).join('');
   }
 
+  // render the content
   async render () {
     return `
       ${await this.getContacts()}
@@ -37,4 +42,5 @@ class ContactsList {
   }
 }
 
+// exporting the class
 export default ContactsList;

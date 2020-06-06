@@ -1,10 +1,15 @@
+// imports
 import { BAAS } from '../services';
 
+// class to display team
 class TeamList {
+  // constructor to specify how many members you would like
   constructor (n = null) {
     this.n = n;
   }
 
+  // get the data of the team from the BAAS
+  // get the first n members from the array
   async getTeam () {
     let team = await BAAS.getTeam();
     if (this.n !== null) {
@@ -29,12 +34,14 @@ class TeamList {
     `).join('');
   }
 
+  // get the functions of a member
   getFunctions (array) {
     return array.map(funct => `
       <li>${funct}</li>
     `).join('');
   }
 
+  // render the content
   async render () {
     return `
       ${await this.getTeam()}
@@ -47,4 +54,5 @@ class TeamList {
   }
 }
 
+// exporting the class
 export default TeamList;

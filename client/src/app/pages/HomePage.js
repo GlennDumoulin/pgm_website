@@ -1,13 +1,17 @@
+// imports
 import { routes } from '../router';
 
 import { CasesList, PostsList } from '../components';
 
+// class to display home page
 class HomePage {
+  // constructor for used components
   constructor () {
     this.compCasesList = new CasesList(2);
     this.compPostsList = new PostsList(2);
   }
 
+  // render the content
   async render () {
     return `
       <div class="page page--home container">
@@ -65,6 +69,7 @@ class HomePage {
 
   async mount () {
     // Before the rendering of the page
+    // scroll to the top
     window.scrollTo(0, 0);
     return this;
   }
@@ -75,4 +80,5 @@ class HomePage {
   }
 }
 
+// exporting the class
 export default HomePage;

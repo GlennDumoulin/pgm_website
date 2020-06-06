@@ -1,10 +1,14 @@
+// imports
 import { PostsList } from '../components';
 
+// class to display nieuws page
 class NieuwsPage {
+  // constructor for used components
   constructor () {
     this.compPostsList = new PostsList();
   }
 
+  // render the content
   async render () {
     return `
       <div class="page page--nieuws container">
@@ -24,6 +28,7 @@ class NieuwsPage {
 
   async mount () {
     // Before the rendering of the page
+    // scroll to the top
     window.scrollTo(0, 0);
     return this;
   }
@@ -34,4 +39,5 @@ class NieuwsPage {
   }
 }
 
+// exporting the class
 export default NieuwsPage;

@@ -1,8 +1,11 @@
+// imports
 import { routes } from '../router';
 
 import ahsLogo from '../_static/images/ahs_logo.png';
 
+// class to display the footer
 class Footer {
+  // render the content
   async render () {
     return `
       <footer class="footer">
@@ -60,6 +63,7 @@ class Footer {
     return this;
   }
 
+  // update the navigation to check which link is active
   updateActiveLink (route) {
     const prevActiveMenuItemElement = document.querySelector(`.footer-sitemap__item > a[class*="active"]`);
     if (prevActiveMenuItemElement) {
@@ -73,4 +77,5 @@ class Footer {
   }
 }
 
+// exporting the class
 export default Footer;
