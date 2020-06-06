@@ -13,7 +13,11 @@ class CasesList {
   }) {
     let cases = await BAAS.getCases();
     if (this.n !== null) {
-      cases = cases.slice(0, this.n);
+      const randomCases = [];
+      for (let i = 0; i < this.n; i++) {
+        randomCases.push(cases[Math.floor(Math.random() * cases.length)]);
+      }
+      cases = randomCases;
     }
     if (filter.course !== 'all') {
       /* eslint-disable arrow-body-style */

@@ -10,7 +10,12 @@ class PostsList {
   async getPosts () {
     let posts = await BAAS.getPosts();
     if (this.n !== null) {
-      posts = posts.slice(0, this.n);
+      const randomPosts = [];
+      for (let i = 0; i < this.n; i++) {
+        const randomIndex = Math.floor(Math.random() * posts.length);
+        randomPosts.push(posts[randomIndex]);
+      }
+      posts = randomPosts;
     }
     return this.displayPosts(posts);
   }
