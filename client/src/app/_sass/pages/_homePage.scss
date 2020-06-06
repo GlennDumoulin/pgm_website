@@ -1,16 +1,12 @@
 .home {
-    &__opleiding, &__team, &__werkplekleren {
-        position: relative;
-        &-image {
-            position: relative;
-        }
+    &__opleiding, &__team, &__werkplekleren, &__contact {
         &-button {
             background-color: $color-black_bg--50;
             padding: 15px 25px;
             border: 4px solid $color-dark-turqouise_m;
             border-radius: 25px;
-            position: absolute;
-            top: 65%;
+            width: fit-content;
+            margin: 0 auto;
             transition: all 0.3s ease-in-out;
             &:hover {
                 border-color: $color-green_m;
@@ -22,52 +18,63 @@
     }
     &__opleiding {
         margin-bottom: 75px;
+        background-image: url(../../_static/images/computers_and_code.jpg);
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 600px;
+        @media (max-width: 767px) {
+            height: 400px;
+        }
+        @media (max-width: 576px) {
+            height: 300px;
+        }
         & h1 {
             font-size: calc(3vw);
             text-shadow: $color-dark-turqouise_m 3px -4px;
             text-align: center;
-            position: absolute;
-            top: 10%;
-            left: 18%;
+            margin-top: 0;
+            padding-top: 75px;
             @media (max-width: 576px) {
                 font-size: calc(9vw/2);
-                top: 5%;
-                left: 14%;
             }
         }
         &-button {
-            left: 39%;
+            margin-top: 175px;
             @media (max-width: 767px) {
-                left: 33%;
+                margin-top: 100px;
             }
             @media (max-width: 576px) {
-                left: 30%;
+                margin-top: 50px;
             }
         }
     }
     &__team {
         margin-bottom: 75px;
+        background-image: url(../../_static/images/team.jpg);
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 600px;
+        @media (max-width: 767px) {
+            height: 400px;
+        }
+        @media (max-width: 576px) {
+            height: 300px;
+        }
         & h1 {
             text-align: center;
-        }
-        &-image {
-            border: 4px solid $color-dark-turqouise_m;
-            border-radius: 25px;
-            width: 75%;
-            margin: 0 12.5%;
-            @media (max-width: 767px) {
-                width: 100%;
-                margin: 0;
-            }
+            text-shadow: none;
+            background-color: $color-black_bg--50;
+            padding: 15px 0;
         }
         &-button {
-            top: 70%;
-            left: 36%;
+            margin-top: 375px;
             @media (max-width: 767px) {
-                left: 28%;
+                margin-top: 225px;
             }
             @media (max-width: 576px) {
-                left: 25%;
+                margin-top: 150px;
             }
         }
     }
@@ -97,6 +104,17 @@
         }
     }
     &__werkplekleren {
+        background-image: url(../../_static/images/ahs_building.jpg);
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 600px;
+        @media (max-width: 767px) {
+            height: 400px;
+        }
+        @media (max-width: 576px) {
+            height: 300px;
+        }
         & h2 {
             font-size: calc(2vw);
             color: $color-whitish_m;
@@ -104,37 +122,24 @@
             text-shadow: none;
             text-align: center;
             padding: 10px 0;
-            position: absolute;
-            top: 20%;
-            left: 0;
             @media (max-width: 576px) {
                 font-size: calc(7vw/2);
-                top: 7%;
             }
         }
         &-button {
-            left: 36%;
+            margin-top: 225px;
             @media (max-width: 767px) {
-                left: 26%;
+                margin-top: 125px;
             }
             @media (max-width: 576px) {
-                left: 23%;
+                margin-top: 75px;
             }
         }
     }
     &__contact {
         &-button {
-            background-color: $color-black_bg--50;
-            width: fit-content;
-            margin: 0 auto;
             margin-top: 75px;
             padding: 25px 50px;
-            border: 4px solid $color-dark-turqouise_m;
-            border-radius: 25px;
-            transition: all 0.3s ease-in-out;
-            &:hover {
-                border-color: $color-green_m;
-            }
             @media (max-width: 576px) {
                 margin-top: 50px;
             }

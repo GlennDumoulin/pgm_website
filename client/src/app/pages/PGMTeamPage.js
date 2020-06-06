@@ -22,7 +22,7 @@ class PGMTeamPage {
             <option value="2019 - 2021">2019 - 2021</option>
             <option value="2020 - 2022">2020 - 2022</option>
           </select>
-          <button type="submit" class="filter__button">Pas filter toe <i class="fas fa-filter no-borders"></i></button>
+          <button type="submit" class="col-4 col-md-2 filter__button">Pas filter toe <i class="fas fa-filter no-borders"></i></button>
         </form>
         <div class="row students-list justify-content-center">
           ${await this.compStudentsList.render()}

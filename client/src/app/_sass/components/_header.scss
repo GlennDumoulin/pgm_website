@@ -8,7 +8,7 @@
         width: 100%;
         &_logo {
             width: 20%;
-            @media (max-width: 768px) {
+            @media (max-width: 767px) {
                 width: 40%;
             }
         }
@@ -17,7 +17,7 @@
             @media (max-width: 992px) {
                 width: 75%;
             }
-            @media (max-width: 768px) {
+            @media (max-width: 767px) {
                 display: none;
             }
         }
@@ -37,7 +37,7 @@
             @media (max-width: 992px) {
                 font-size: calc(9vw / 6);
             }
-            @media (max-width: 768px) {
+            @media (max-width: 767px) {
                 font-size: calc(15vw / 6);
                 padding: 10px 0;
             }
@@ -67,7 +67,7 @@
                     border-color: $color-whitish_m;
                 }
             }
-            @media (max-width: 768px) {
+            @media (max-width: 767px) {
                 display: block;
                 width: 50px;
             }

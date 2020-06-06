@@ -5,7 +5,7 @@ class ContactsList {
     const contacts = await BAAS.getContacts();
     contacts.sort((a, b) => a.name.localeCompare(b.name));
     return contacts.map(contact => `
-    <div class="col-6 col-md-4 col-lg-3">
+    <div class="col-9 col-md-6 col-lg-3">
       <div class="card contact__list-item">
         <img src="${contact.thumbnail}" alt="Image of ${contact.name}" class="card__image">
         <div class="d-flex card__info">

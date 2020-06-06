@@ -130,7 +130,7 @@ class CaseDetailPage {
 
   getImages (array) {
     return array.map(image => `
-      <img src="${image.src}" alt="Image of ${image.alt}" class="col-12 col-md-6 case-images__image">
+      <img src="${image.src}" alt="Image of ${image.alt}" class="col-12 col-lg-6 case-images__image">
     `).join('');
   }
 

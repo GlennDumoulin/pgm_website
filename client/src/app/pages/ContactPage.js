@@ -12,7 +12,7 @@ class ContactPage {
         <h1>Contact</h1>
         <div class="row no-gutters contact__location">
           <div class="col-12 col-md-5 contact__location-map" id="contactMap"></div>
-          <div class="col-12 col-md-6 offset-md-1 d-flex flex-column justify-content-around contact__location-info">
+          <div class="col-12 col-md-6 d-flex flex-column justify-content-around contact__location-info">
             <div class="d-flex align-items-center contact__location-info-item">
               <i class="fas fa-home"></i>
               <p>Arteveldehogeschool VZW<br>Industrieweg 232, 9000 Gent</p>
@@ -39,7 +39,7 @@ class ContactPage {
             </div>
             <div class="col-12 col-md-6 d-flex align-items-center contacteer__section">
               <label for="email" class="contacteer__label">Email</label>
-              <input type="text" id="email" name="email" required class="contacteer__item">
+              <input type="email" id="email" name="email" required class="contacteer__item">
             </div>
             <div class="col-12 d-flex flex-column contacteer__section">
               <label for="question" class="contacteer__label">Stel uw vraag hier</label>

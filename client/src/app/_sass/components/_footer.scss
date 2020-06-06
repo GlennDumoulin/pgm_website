@@ -13,7 +13,7 @@
         background-color: $color-purple_bg--100;
         padding: 5px 0;
         & p {
-            @media (max-width: 768px) {
+            @media (max-width: 767px) {
                 width: 85%;
             }
         }
