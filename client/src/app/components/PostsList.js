@@ -17,7 +17,19 @@ class PostsList {
       }
       posts = randomPosts;
     }
+    posts.sort(this.sortOnDate);
     return this.displayPosts(posts);
+  }
+
+  sortOnDate (a, b) {
+    let order = 0;
+    if (a.createdAt < b.createdAt) {
+      order = 1;
+    }
+    if (a.createdAt > b.createdAt) {
+      order = -1;
+    }
+    return order;
   }
 
   async displayPosts (array) {
