@@ -34,7 +34,6 @@ class Header {
           </ul>
         </nav>
       </header>
-      <div class="stroke"></div>
     `;
   }
 

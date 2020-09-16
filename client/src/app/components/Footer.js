@@ -9,7 +9,6 @@ class Footer {
   async render () {
     return `
       <footer class="footer">
-        <div class="stroke"></div>
         <div class="footer-content">
           <div class="container">
             <div class="row">

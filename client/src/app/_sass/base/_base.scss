@@ -15,7 +15,7 @@ html {
 }
 
 body {
-    background-image: linear-gradient(to right bottom, #422084, #4d2292, #5924a0, #6626ae, #7327bc, #6247d5, #4760eb, #0076ff, #0097ff, #00abe4, #00b8af, #1fbf7c);
+    background-color: #422084;
     background-attachment: fixed;
     background-position: center;
     background-size: contain;
@@ -131,19 +131,11 @@ i {
     }
 }
 
-.stroke {
-    width: 100%;
-    height: 3px;
-    margin: 0;
-    background-color: $color-turqouise-m;
-}
-
 .page {
     padding: 25px 0 75px;
     @media (max-width: 767px) {
         padding: 25px 0;
     }
-    background-color: $color-black_bg--50;
     & .card {
         background-color: $color-black_bg--50;
         color: $color-whitish_m;
